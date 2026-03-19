@@ -11,18 +11,34 @@
 
   :root {
     /* Colors */
-    --primary-color: #2c1c14;
-    --dark-color: #311e06;
-    --secondary-color: #0f0a06;
-    --light-color: #d1c1a5;
+    --primary-color: #3c4049;
+    --secondary-color: #175cdd;
+    --heading-color: #112344;
+    --light-color: #f4f8ff;
     --danger-color: #dc3545;
     --success-color: #28a745;
+    --default-font:
+      "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Montserrat", sans-serif;
+    --nav-font: "Lato", sans-serif;
   }
 
   body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: var(--default-font);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--heading-font);
+  }
+
+  nav {
+    font-family: var(--nav-font);
   }
 
   a {
@@ -36,7 +52,35 @@
 
   i {
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
+  }
+
+  .medical-container {
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 12px;
+    max-width: 540px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .medical-container {
+      max-width: 720px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .medical-container {
+      max-width: 960px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .medical-container {
+      max-width: 1140px;
+    }
+  }
+  @media screen and (min-width: 1400px) {
+    .medical-container {
+      max-width: 1320px;
+    }
   }
 }
 
