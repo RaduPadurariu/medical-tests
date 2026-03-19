@@ -1,7 +1,27 @@
 import type { Metadata } from "next";
+import { Roboto, Montserrat, Lato } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
+import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--default-font",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--heading-font",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--nav-font",
+});
 
 export const metadata: Metadata = {
   title: "myMedicalTests | Manage & Print Medical Test Lists",
@@ -46,9 +66,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body
+        className={`${roboto.variable} ${montserrat.variable} ${lato.variable}`}
+      >
         <Header />
-        {children}
+        <main className="pt-30">{children}</main>
         <Footer />
       </body>
     </html>
