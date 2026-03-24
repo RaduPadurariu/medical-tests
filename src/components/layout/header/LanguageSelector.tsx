@@ -1,12 +1,17 @@
 "use client";
 
+import { useLanguageContext } from "@/context/languageContext/useLanguageContext";
 import { languages } from "@/data/data";
 import Image from "next/image";
 import { useState } from "react";
 
 const LanguageSelector = () => {
   const [arrowOpen, setArrowOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+  const { lang, setLang } = useLanguageContext();
+
+  const selectedLanguage =
+    languages.find((el) => el.code === lang) ?? languages[0];
+
   return (
     <div className="relative mr-4">
       <div
@@ -35,9 +40,9 @@ const LanguageSelector = () => {
                   key={item.id}
                   onClick={() => {
                     setArrowOpen(false);
-                    setSelectedLanguage(item);
+                    setLang(item.code);
                   }}
-                  className="w-full, py-1 px-4 flex items-center justify-between mb-1 cursor-pointer hover:bg-[#E8EDFF] transition-all duration-300 ease-in-out"
+                  className="w-full py-1 px-4 flex items-center justify-between mb-1 cursor-pointer hover:bg-[#E8EDFF] transition-all duration-300 ease-in-out"
                 >
                   <div className="flex items-center">
                     <Image
@@ -48,10 +53,10 @@ const LanguageSelector = () => {
                       className=""
                     />
                     <div className="ml-2 text-(--primary-color) font-semibold text-sm">
-                      {item.title}
+                      {item.label}
                     </div>
                   </div>
-                  {item.title === selectedLanguage.title && (
+                  {item.code === selectedLanguage.code && (
                     <svg
                       className="w-4 h-4 text-(--primary-color)"
                       viewBox="0 0 20 20"

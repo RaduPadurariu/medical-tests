@@ -1,10 +1,39 @@
-export const navLinks = [
-  { id: 1, title: "Home", href: "/" },
-  { id: 2, title: "Lab Tests", href: "/lab-tests" },
-  { id: 3, title: "Contact", href: "/contact" },
+import { Language, NavLinkType } from "@/types/types";
+
+export const navLinks: NavLinkType[] = [
+  { id: 1, key: "home", href: "/" },
+  { id: 2, key: "labTests", href: "/lab-tests" },
+  { id: 3, key: "contact", href: "/contact" },
 ];
 
-export const languages = [
-  { id: 1, flag: "/images/us-flag.png", title: "EN" },
-  { id: 2, flag: "/images/ro-flag.png", title: "RO" },
+export const languages: Language[] = [
+  { id: 1, flag: "/images/us-flag.png", label: "EN", code: "en" },
+  { id: 2, flag: "/images/ro-flag.png", label: "RO", code: "ro" },
+];
+
+export const howItWorksSteps = [
+  {
+    id: "01",
+    title: "Create an Account",
+    description:
+      "Sign up for free in seconds. All you need is an email address to get started.",
+  },
+  {
+    id: "02",
+    title: "Browse & Select Tests",
+    description:
+      "Explore our catalog of lab tests. Click to add any test you need to your personal list.",
+  },
+  {
+    id: "03",
+    title: "Review Your List",
+    description:
+      "Check your selected tests, make adjustments, and ensure everything is correct.",
+  },
+  {
+    id: "04",
+    title: "Print & Go",
+    description:
+      "Generate a PDF with your test list. Print it and bring it to your preferred laboratory.",
+  },
 ];

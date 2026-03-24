@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { LanguageContextProvider } from "@/context/languageContext/LanguageContextProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -69,9 +70,11 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${montserrat.variable} ${lato.variable}`}
       >
-        <Header />
-        <main className="pt-30">{children}</main>
-        <Footer />
+        <LanguageContextProvider>
+          <Header />
+          <main className="pt-30">{children}</main>
+          <Footer />
+        </LanguageContextProvider>
       </body>
     </html>
   );

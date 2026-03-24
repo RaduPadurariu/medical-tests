@@ -1,7 +1,14 @@
+"use client";
+
+import { useLanguageContext } from "@/context/languageContext/useLanguageContext";
+import { translations } from "@/data/translations";
+
 const Footer = () => {
+  const { lang } = useLanguageContext();
   return (
-    <footer className="border-t border-gray-200 mt-10 py-6 text-center text-sm text-gray-500">
-      © {new Date().getFullYear()} Medical Tests. Built by Radu Padurariu.
+    <footer className="py-6 text-center text-sm text-gray-500">
+      © {new Date().getFullYear()} Medical Tests. {translations[lang].footer}{" "}
+      Radu Padurariu.
     </footer>
   );
 };

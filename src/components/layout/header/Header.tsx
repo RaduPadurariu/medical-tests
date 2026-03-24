@@ -6,7 +6,7 @@ import Navbar from "../navbar/Navbar";
 const Header = () => {
   return (
     <div>
-      <header className="w-full fixed text-(--primary-color) z-30 bg-white/0 shadow-[0px_0px_18px_rgba(0,0,0,0.1)]">
+      <header className="fixed inset-x-0 top-0 w-full text-(--primary-color) z-50 bg-white shadow-[0px_0px_18px_rgba(0,0,0,0.1)]">
         <div className="flex items-center h-10 p-0 text-sm transition-all duration-500 bg-(--secondary-color) text-white">
           <div className="medical-container flex justify-between">
             <div className="flex items-center ml-auto">
