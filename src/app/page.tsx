@@ -1,9 +1,4 @@
-import Home from "@/components/home/Home";
-
-export default function HomePage() {
-  return (
-    <div className="">
-      <Home />
-    </div>
-  );
+import { redirect } from "next/navigation";
+export default function RootPage() {
+  redirect("/en");
 }
