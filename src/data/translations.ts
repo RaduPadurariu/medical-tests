@@ -1,5 +1,3 @@
-import { howItWorksSteps } from "./data";
-
 export const translations = {
   en: {
     nav: {

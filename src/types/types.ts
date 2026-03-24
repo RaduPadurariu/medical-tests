@@ -6,8 +6,6 @@ export type NavLinkType = {
   href: string;
 };
 
-export type LangType = "en" | "ro";
-
 export type LanguageContextType = {
   lang: LangType;
   setLang: (value: LangType) => void;
@@ -22,4 +20,13 @@ export type Language = {
   code: LangType;
   flag: string;
   label: string;
+};
+
+export type LangType = "en" | "ro";
+export type LangParamsType = {
+  lang: string;
+};
+export type LangLayoutType = {
+  children: React.ReactNode;
+  params: Promise<LangParamsType>;
 };
