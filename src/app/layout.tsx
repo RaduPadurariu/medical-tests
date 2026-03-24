@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Roboto, Montserrat, Lato } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { LanguageContextProvider } from "@/context/languageContext/LanguageContextProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -68,7 +67,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${montserrat.variable} ${lato.variable}`}
       >
-        <LanguageContextProvider>{children}</LanguageContextProvider>
+        {children}
       </body>
     </html>
   );

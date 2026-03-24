@@ -23,9 +23,11 @@ export type Language = {
 };
 
 export type LangType = "en" | "ro";
+
 export type LangParamsType = {
   lang: string;
 };
+
 export type LangLayoutType = {
   children: React.ReactNode;
   params: Promise<LangParamsType>;

@@ -1,11 +1,6 @@
-"use client";
-
-import { useLanguageContext } from "@/context/languageContext/useLanguageContext";
-import { howItWorksSteps } from "@/data/data";
 import { translations } from "@/data/translations";
-
-const HowItWorks = () => {
-  const { lang } = useLanguageContext();
+import { LangType } from "@/types/types";
+const HowItWorksSection = ({ lang }: { lang: LangType }) => {
   const t = translations[lang].home.howItWorks;
   return (
     <section className="bg-(--light-color) py-16 lg:py-24">
@@ -20,7 +15,7 @@ const HowItWorks = () => {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {howItWorksSteps.map((step, index) => (
+          {t.howItWorksSteps.map((step, index) => (
             <div
               key={step.id}
               className="relative overflow-hidden rounded-lg border border-(--border-color) bg-white p-6"
@@ -30,10 +25,10 @@ const HowItWorks = () => {
                   {index + 1}
                 </div>
                 <h3 className="mb-2 text-lg font-semibold text-(--heading-color)">
-                  {t.howItWorksSteps[index].title}
+                  {step.title}
                 </h3>
                 <p className="text-sm text-(--text-color) leading-relaxed">
-                  {t.howItWorksSteps[index].description}
+                  {step.description}
                 </p>
               </div>
             </div>
@@ -44,4 +39,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default HowItWorksSection;

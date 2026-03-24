@@ -13,6 +13,7 @@ export const translations = {
       logout: "Log out",
     },
     footer: "Built by",
+
     home: {
       callToAction: {
         title: "Ready to Organize Your Lab Tests?",
@@ -51,6 +52,44 @@ export const translations = {
               "Generate a PDF with your test list. Print it and bring it to your preferred laboratory.",
           },
         ],
+      },
+    },
+
+    heroSection: {
+      badges: {
+        cloud: "Cloud Sync",
+        pdf: "PDF Export",
+      },
+      headline: {
+        start: "Organize Your",
+        middle: "Lab Tests",
+        end: "in Minutes",
+      },
+      description:
+        "Create your personalized lab test list, keep track of what you need, and print a professional PDF to bring to your laboratory. Simple, organized, and always accessible.",
+      stats: {
+        tests: {
+          value: "20+",
+          secondary: "Lab Tests",
+        },
+        free: {
+          value: "Free",
+          secondary: "To Use",
+        },
+        save: {
+          value: "Save",
+          secondary: "Your List",
+        },
+      },
+      cta: {
+        getStarted: "Get Started",
+        viewLabTests: "View Lab Tests",
+      },
+      floatingCard: {
+        myTestList: "My Test List",
+        testsSelected: "tests selected",
+        pdfReady: "PDF Ready",
+        printableExport: "Printable export",
       },
     },
   },
@@ -106,6 +145,43 @@ export const translations = {
               "Generează un PDF cu lista ta și du-l la laboratorul ales.",
           },
         ],
+      },
+    },
+    heroSection: {
+      badges: {
+        cloud: "Salvare în Cloud",
+        pdf: "Exporta PDF",
+      },
+      headline: {
+        start: "Organizează",
+        middle: "analizele",
+        end: "în cateva minute",
+      },
+      description:
+        "Creează lista ta personală de analize, păstrează urmărirea testelor pe care le ai nevoie și generează un PDF profesional pentru a le duce la laborator. Simplu, organizat și accesibil mereu.",
+      stats: {
+        tests: {
+          value: "20+",
+          secondary: "Analize",
+        },
+        free: {
+          value: "Gratuit",
+          secondary: "De utilizat",
+        },
+        save: {
+          value: "Salvează",
+          secondary: "Lista ta",
+        },
+      },
+      cta: {
+        getStarted: "Începe",
+        viewLabTests: "Vezi analize",
+      },
+      floatingCard: {
+        myTestList: "Lista de analize",
+        testsSelected: "analize selectate",
+        pdfReady: "PDF gata",
+        printableExport: "Exportabil",
       },
     },
   },
