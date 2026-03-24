@@ -1,16 +1,31 @@
 "use client";
 
-import { useLanguageContext } from "@/context/languageContext/useLanguageContext";
 import { languages } from "@/data/data";
+import { LangType } from "@/types/types";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ lang }: { lang: LangType }) => {
   const [arrowOpen, setArrowOpen] = useState(false);
-  const { lang, setLang } = useLanguageContext();
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   const selectedLanguage =
     languages.find((el) => el.code === lang) ?? languages[0];
+
+  const handleLanguageChange = (nextLang: LangType) => {
+    setArrowOpen(false);
+    if (nextLang === lang) return;
+    const segments = pathname.split("/").filter(Boolean);
+    if (segments.length === 0) {
+      router.push(`/${nextLang}`);
+      return;
+    }
+    segments[0] = nextLang;
+    router.push(`/${segments.join("/")}`);
+  };
 
   return (
     <div className="relative mr-4">
@@ -38,10 +53,7 @@ const LanguageSelector = () => {
               return (
                 <li
                   key={item.id}
-                  onClick={() => {
-                    setArrowOpen(false);
-                    setLang(item.code);
-                  }}
+                  onClick={() => handleLanguageChange(item.code)}
                   className="w-full py-1 px-4 flex items-center justify-between mb-1 cursor-pointer hover:bg-[#E8EDFF] transition-all duration-300 ease-in-out"
                 >
                   <div className="flex items-center">

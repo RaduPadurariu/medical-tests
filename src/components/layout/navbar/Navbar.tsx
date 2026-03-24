@@ -4,12 +4,11 @@ import { navLinks } from "@/data/data";
 import NavbarActiveLink from "./NavbarActiveLink";
 import { useState } from "react";
 import Link from "next/link";
-import { useLanguageContext } from "@/context/languageContext/useLanguageContext";
 import { translations } from "@/data/translations";
+import { LangType } from "@/types/types";
 
-const Navbar = () => {
+const Navbar = ({ lang }: { lang: LangType }) => {
   const [navOpen, setNavOpen] = useState(false);
-  const { lang } = useLanguageContext();
   return (
     <nav
       className={`${navOpen ? "fixed inset-0 bg-[#212529CC] z-999" : ""} md:static`}
@@ -23,6 +22,7 @@ const Navbar = () => {
               item={item}
               key={item.id}
               setNavOpen={setNavOpen}
+              lang={lang}
             />
           );
         })}
@@ -30,7 +30,7 @@ const Navbar = () => {
         <li className="ml-5 md:ml-7 mt-1.5 self-start">
           <Link
             onClick={() => setNavOpen(false)}
-            href="/my-list"
+            href={`/${lang}/my-list`}
             className="px-5 py-2 flex items-center gap-2 rounded-full cursor-pointer bg-(--secondary-color) text-white border-2 border-(--secondary-color) font-semibold transition-all duration-300 hover:bg-blue-600 hover:shadow-md leading-none"
           >
             <i className="fa-solid fa-notes-medical text-base"></i>
