@@ -15,6 +15,43 @@ export const translations = {
     footer: "Built by",
 
     home: {
+      heroSection: {
+        badges: {
+          cloud: "Cloud Sync",
+          pdf: "PDF Export",
+        },
+        headline: {
+          start: "Organize Your",
+          middle: "Lab Tests",
+          end: "in Minutes",
+        },
+        description:
+          "Create your personalized lab test list, keep track of what you need, and print a professional PDF to bring to your laboratory. Simple, organized, and always accessible.",
+        stats: {
+          tests: {
+            value: "20+",
+            secondary: "Lab Tests",
+          },
+          free: {
+            value: "Free",
+            secondary: "To Use",
+          },
+          save: {
+            value: "Save",
+            secondary: "Your List",
+          },
+        },
+        cta: {
+          getStarted: "Get Started",
+          viewLabTests: "View Lab Tests",
+        },
+        floatingCard: {
+          myTestList: "My Test List",
+          testsSelected: "tests selected",
+          pdfReady: "PDF Ready",
+          printableExport: "Printable export",
+        },
+      },
       callToAction: {
         title: "Ready to Organize Your Lab Tests?",
         description:
@@ -54,43 +91,66 @@ export const translations = {
         ],
       },
     },
-
-    heroSection: {
-      badges: {
-        cloud: "Cloud Sync",
-        pdf: "PDF Export",
-      },
-      headline: {
-        start: "Organize Your",
-        middle: "Lab Tests",
-        end: "in Minutes",
-      },
+    medicalTests: {
+      title: "Lab Tests",
       description:
-        "Create your personalized lab test list, keep track of what you need, and print a professional PDF to bring to your laboratory. Simple, organized, and always accessible.",
-      stats: {
-        tests: {
-          value: "20+",
-          secondary: "Lab Tests",
-        },
-        free: {
-          value: "Free",
-          secondary: "To Use",
-        },
-        save: {
-          value: "Save",
-          secondary: "Your List",
-        },
+        "Explore our catalog of lab tests. Click to add any test you need to your personal list.",
+    },
+    breadcrumbs: {
+      home: "Home",
+      labTests: "Lab Tests",
+      contact: "Contact",
+      myList: "My List",
+    },
+    myListPage: {
+      title: "My List",
+      description:
+        "Here you can see all the tests selected and export them in PDF.",
+    },
+    contactPage: {
+      title: "Contact",
+      subtitle:
+        "Questions, feedback, or bug reports — send a message and we’ll get back to you when we can.",
+      disclaimer:
+        "This app helps you organize lab test names and export a list. It does not provide medical advice.",
+      form: {
+        name: "Name",
+        namePlaceholder: "Your name",
+        email: "Email",
+        emailPlaceholder: "you@example.com",
+        subject: "Subject",
+        subjectGeneral: "General",
+        subjectBug: "Bug report",
+        subjectFeature: "Feature idea",
+        message: "Message",
+        messagePlaceholder: "How can we help?",
+        submitSuccess: "Thanks — this is a demo; nothing was sent to a server.",
+        submit: "Send message",
+        errorRequired: "Please fill in all fields.",
+        errorEmail: "Please enter a valid email address.",
       },
-      cta: {
-        getStarted: "Get Started",
-        viewLabTests: "View Lab Tests",
+      aside: {
+        emailTitle: "Email",
+        emailAddress: "padurariuionutradu@gmail.com",
+        locationTitle: "Location",
+        locationValue: "Falticeni, Suceava, Romania",
+        replyNote: "We usually reply within a few business days.",
       },
-      floatingCard: {
-        myTestList: "My Test List",
-        testsSelected: "tests selected",
-        pdfReady: "PDF Ready",
-        printableExport: "Printable export",
-      },
+      faqTitle: "Common questions",
+      faq: [
+        {
+          q: "Is this medical advice?",
+          a: "No. Information about tests is for organization only. Always follow your doctor and the laboratory.",
+        },
+        {
+          q: "Where is my data stored?",
+          a: "When you sign in, your saved list can be stored in a database. This contact form is frontend-only until you connect a service.",
+        },
+        {
+          q: "How do I report a problem?",
+          a: "Use the form with “Bug report” or email us directly from the address on the right.",
+        },
+      ],
     },
   },
   ro: {
@@ -108,6 +168,43 @@ export const translations = {
     },
     footer: "Creat de",
     home: {
+      heroSection: {
+        badges: {
+          cloud: "Salvare în Cloud",
+          pdf: "Exporta PDF",
+        },
+        headline: {
+          start: "Organizează",
+          middle: "analizele",
+          end: "în cateva minute",
+        },
+        description:
+          "Creează lista ta personală de analize, păstrează urmărirea testelor pe care le ai nevoie și generează un PDF profesional pentru a le duce la laborator. Simplu, organizat și accesibil mereu.",
+        stats: {
+          tests: {
+            value: "20+",
+            secondary: "Analize",
+          },
+          free: {
+            value: "Gratuit",
+            secondary: "De utilizat",
+          },
+          save: {
+            value: "Salvează",
+            secondary: "Lista ta",
+          },
+        },
+        cta: {
+          getStarted: "Începe",
+          viewLabTests: "Vezi analize",
+        },
+        floatingCard: {
+          myTestList: "Lista de analize",
+          testsSelected: "analize selectate",
+          pdfReady: "PDF gata",
+          printableExport: "Exportabil",
+        },
+      },
       callToAction: {
         title: "Gata să organizezi analizele?",
         description:
@@ -147,42 +244,67 @@ export const translations = {
         ],
       },
     },
-    heroSection: {
-      badges: {
-        cloud: "Salvare în Cloud",
-        pdf: "Exporta PDF",
-      },
-      headline: {
-        start: "Organizează",
-        middle: "analizele",
-        end: "în cateva minute",
-      },
+    medicalTests: {
+      title: "Analize medicale",
       description:
-        "Creează lista ta personală de analize, păstrează urmărirea testelor pe care le ai nevoie și generează un PDF profesional pentru a le duce la laborator. Simplu, organizat și accesibil mereu.",
-      stats: {
-        tests: {
-          value: "20+",
-          secondary: "Analize",
-        },
-        free: {
-          value: "Gratuit",
-          secondary: "De utilizat",
-        },
-        save: {
-          value: "Salvează",
-          secondary: "Lista ta",
-        },
+        "Explorează catalogul nostru de analize. Adaugă testele dorite în lista ta personală.",
+    },
+    breadcrumbs: {
+      home: "Acasă",
+      labTests: "Analize medicale",
+      contact: "Contact",
+      myList: "Lista mea",
+    },
+    myListPage: {
+      title: "Lista mea",
+      description:
+        "Aici poți vedea toate analizele selectate și să le exportezi în PDF.",
+    },
+    contactPage: {
+      title: "Contact",
+      subtitle:
+        "Întrebări, feedback sau raport de eroare — trimite un mesaj și îți răspundem când putem.",
+      disclaimer:
+        "Aplicația te ajută să organizezi numele analizelor și să exporți o listă. Nu oferă sfaturi medicale.",
+      form: {
+        name: "Nume",
+        namePlaceholder: "Numele tău",
+        email: "Email",
+        emailPlaceholder: "tu@exemplu.com",
+        subject: "Subiect",
+        subjectGeneral: "General",
+        subjectBug: "Raport eroare",
+        subjectFeature: "Sugestie funcție",
+        message: "Mesaj",
+        messagePlaceholder: "Cu ce te putem ajuta?",
+        submitSuccess:
+          "Mulțumim — acesta este un demo; nu s-a trimis nimic către un server.",
+        submit: "Trimite mesaj",
+        errorRequired: "Completează toate câmpurile.",
+        errorEmail: "Introdu o adresă de email validă.",
       },
-      cta: {
-        getStarted: "Începe",
-        viewLabTests: "Vezi analize",
+      aside: {
+        emailTitle: "Email",
+        emailAddress: "padurariuionutradu@gmail.com",
+        locationTitle: "Locație",
+        locationValue: "Fălticeni, Suceava, România",
+        replyNote: "De obicei răspundem în câteva zile lucrătoare.",
       },
-      floatingCard: {
-        myTestList: "Lista de analize",
-        testsSelected: "analize selectate",
-        pdfReady: "PDF gata",
-        printableExport: "Exportabil",
-      },
+      faqTitle: "Întrebări frecvente",
+      faq: [
+        {
+          q: "Este sfat medical?",
+          a: "Nu. Informațiile despre analize sunt doar pentru organizare. Urmează mereu indicațiile medicului și ale laboratorului.",
+        },
+        {
+          q: "Unde sunt stocate datele mele?",
+          a: "După autentificare, lista salvată poate fi într-o bază de date. Acest formular de contact este doar frontend până conectezi un serviciu.",
+        },
+        {
+          q: "Cum raportez o problemă?",
+          a: "Folosește formularul cu „Raport eroare” sau scrie-ne direct la adresa din dreapta.",
+        },
+      ],
     },
   },
 };

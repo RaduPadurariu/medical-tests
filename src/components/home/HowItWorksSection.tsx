@@ -9,7 +9,7 @@ const HowItWorksSection = ({ lang }: { lang: LangType }) => {
           <h2 className="text-3xl font-bold tracking-tight text-(--heading-color) md:text-4xl text-balance">
             {t.howItWorksTitle}
           </h2>
-          <p className="mt-4 text-lg text-(--text-color)">
+          <p className="mt-4 text-base text-(--text-color) md:text-lg">
             {t.howItWorksDescription}
           </p>
         </div>

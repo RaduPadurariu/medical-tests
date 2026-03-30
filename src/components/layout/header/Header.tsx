@@ -21,7 +21,7 @@ const Header = ({ lang }: { lang: LangType }) => {
         <div className="min-h-15 py-2.5 flex items-center">
           <div className="medical-container relative flex items-center justify-between">
             <Link href={`/${lang}`} className="logo flex  flex-col">
-              <h1 className="text-[30px] m-0 font-semibold text-(--heading-color)">
+              <h1 className="text-[30px] m-0 font-bold text-(--heading-color)">
                 Medical Tests
               </h1>
             </Link>
