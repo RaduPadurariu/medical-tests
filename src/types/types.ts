@@ -32,3 +32,9 @@ export type LangLayoutType = {
   children: React.ReactNode;
   params: Promise<LangParamsType>;
 };
+
+export type BreadcrumbType = {
+  id: number;
+  key: string;
+  slug: string;
+};

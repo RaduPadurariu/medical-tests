@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection = ({ lang }: { lang: LangType }) => {
-  const t = translations[lang].heroSection;
+  const t = translations[lang].home.heroSection;
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-(--light-color) via-(--light-color) to-(--secondary-color)/10 py-16 lg:py-24">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl" />
