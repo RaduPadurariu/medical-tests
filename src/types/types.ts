@@ -1,3 +1,5 @@
+import { labTestsOptions } from "@/data/labTestsList";
+
 type NavKeys = "home" | "labTests" | "contact";
 
 export type NavLinkType = {
@@ -38,3 +40,8 @@ export type BreadcrumbType = {
   key: string;
   slug: string;
 };
+
+export type LabTestCategoryKey =
+  keyof (typeof labTestsOptions)["en"]["categories"];
+export type LabTestSubcategoryKey =
+  keyof (typeof labTestsOptions)["en"]["subcategories"];

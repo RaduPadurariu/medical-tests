@@ -88,9 +88,10 @@ const HeroSection = ({ lang }: { lang: LangType }) => {
               <Image
                 src="/images/hero-img.jpg"
                 alt="Laboratory professional"
-                fill
                 className="object-cover"
                 priority
+                width={1024}
+                height={1024}
               />
             </div>
 

@@ -12,7 +12,7 @@ const Contact = ({ lang }: { lang: LangType }) => {
 
   return (
     <section className=" py-12 md:py-16">
-      <PageHeader title={t.title} description={t.subtitle} />
+      <PageHeader title={t.title} description={t.description} />
       {/* <p className="mt-4 rounded-lg border border-(--border-color) bg-white/80 px-4 py-3 text-left text-sm text-(--text-muted)">
           {t.disclaimer}
         </p> */}
