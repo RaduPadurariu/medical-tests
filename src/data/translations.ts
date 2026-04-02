@@ -95,6 +95,10 @@ export const translations = {
       title: "Lab Tests",
       description:
         "Explore our catalog of lab tests. Click to add any test you need to your personal list.",
+      addToList: "Add to list",
+      addToListDone: "Added to list",
+      learnMore: "Learn more",
+      noTestsFound: "No tests found",
     },
     breadcrumbs: {
       home: "Home",
@@ -109,7 +113,7 @@ export const translations = {
     },
     contactPage: {
       title: "Contact",
-      subtitle:
+      description:
         "Questions, feedback, or bug reports — send a message and we’ll get back to you when we can.",
       disclaimer:
         "This app helps you organize lab test names and export a list. It does not provide medical advice.",
@@ -248,6 +252,10 @@ export const translations = {
       title: "Analize medicale",
       description:
         "Explorează catalogul nostru de analize. Adaugă testele dorite în lista ta personală.",
+      addToList: "Adaugă în listă",
+      addToListDone: "Adăugat în listă",
+      learnMore: "Află mai mult",
+      noTestsFound: "Nu s-au găsit analize",
     },
     breadcrumbs: {
       home: "Acasă",
@@ -262,7 +270,7 @@ export const translations = {
     },
     contactPage: {
       title: "Contact",
-      subtitle:
+      description:
         "Întrebări, feedback sau raport de eroare — trimite un mesaj și îți răspundem când putem.",
       disclaimer:
         "Aplicația te ajută să organizezi numele analizelor și să exporți o listă. Nu oferă sfaturi medicale.",
