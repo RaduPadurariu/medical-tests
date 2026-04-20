@@ -3,7 +3,13 @@ import { LangType } from "@/types/types";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
-export const useMedicalBreadcrumb = ({ lang }: { lang: LangType }) => {
+export const useMedicalBreadcrumb = ({
+  lang,
+  currentPageLabel,
+}: {
+  lang: LangType;
+  currentPageLabel?: string;
+}) => {
   const pathname = usePathname();
   const breadcrumbs = useMemo(() => {
     const t = translations[lang].breadcrumbs;
@@ -21,16 +27,15 @@ export const useMedicalBreadcrumb = ({ lang }: { lang: LangType }) => {
         [`/${lang}/my-list`]: t.myList,
       };
 
-      return {
-        href,
-        label:
-          defaultLabels[href] ||
-          decodeURIComponent(href.split("/").pop() || ""),
-      };
+      const fallback =
+        defaultLabels[href] || decodeURIComponent(href.split("/").pop() || "");
+      const label =
+        currentPageLabel && href === pathname ? currentPageLabel : fallback;
+      return { href, label };
     });
 
-    return crumbs;
-  }, [pathname, lang]);
+    return crumbs; // [{ href: "/[lang]", label: "Home" }, { href: "/[lang]/lab-tests", label: "Lab Tests" }, { href: "/[lang]/lab-tests/[id]", label: "Test 1" }]
+  }, [pathname, lang, currentPageLabel]);
 
   return breadcrumbs;
 };

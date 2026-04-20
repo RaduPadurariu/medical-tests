@@ -100,6 +100,30 @@ export const translations = {
       learnMore: "Learn more",
       noTestsFound: "No tests found",
     },
+    singleTestPage: {
+      highlightsMeasures: "What it measures",
+      highlightsMatters: "Why it matters",
+      highlightsTurnaround: "Typical turnaround",
+      referenceRangeTitle: "Typical adult reference interval (serum)",
+      unit: "g/L",
+      sectionTitle: "About this test",
+      stepsTitle: "BEFORE YOU GO TO THE LAB (INFORMATIVE)",
+      stepList:
+        "Take this created list with you to the lab so the staff knows exactly which tests you’d like to perform.",
+      stepId:
+        "Bring a valid ID (National ID); it is required for registration at the lab. Also, check if you need an appointment or a queue ticket.",
+      stepFasting:
+        "Most tests are best performed in the morning after 8–12 hours of fasting (no food or drinks except plain water). Staying well-hydrated with water makes the blood draw easier and more comfortable.",
+      stepSpecial:
+        "This test follows the standard procedure. No additional special steps are needed beyond the general advice shown here.",
+      categoriesHeading: "Where this test fits",
+      categoriesSubtitle:
+        "Clinical grouping used on this site (not a diagnosis)",
+      belowReference: "If your result is below the lab’s reference",
+      aboveReference: "If your result is above the lab’s reference",
+      disclaimer:
+        "Information on this page is educational and does not replace medical advice. Use your laboratory’s reference interval and discuss results with a qualified professional.",
+    },
     breadcrumbs: {
       home: "Home",
       labTests: "Lab Tests",
@@ -256,6 +280,30 @@ export const translations = {
       addToListDone: "Adăugat în listă",
       learnMore: "Află mai mult",
       noTestsFound: "Nu s-au găsit analize",
+    },
+    singleTestPage: {
+      highlightsMeasures: "Ce măsoară",
+      highlightsMatters: "De ce contează",
+      highlightsTurnaround: "Timp orientativ până la rezultat",
+      referenceRangeTitle: "Interval de referință tipic adult (ser)",
+      unit: "g/L",
+      sectionTitle: "Despre această analiză",
+      stepsTitle: "ÎNAINTE DE A MERGE LA LABORATOR (INFORMATIV)",
+      stepList:
+        "Ia această listă creată cu tine la laborator astfel încât personalul să știe exact care teste dorește să se facă.",
+      stepId:
+        "Bifează un document valid (CNP); este necesar pentru înregistrarea la laborator. Verifică dacă ai nevoie de o programare sau de un bilet de coadă.",
+      stepFasting:
+        "Multe teste sunt mai bune efectuate dimineața după 8–12 ore de post (fără alimente sau băuturi, doar apă pură). Menținerea hidratării cu apă face recoltarea mai ușoară și confortabilă.",
+      stepSpecial:
+        "Această analiză urmează procedura standard. Nu sunt necesare pași speciali în afară de recomandările generale afișate aici.",
+      categoriesHeading: "Unde se încadrează",
+      categoriesSubtitle:
+        "Grupare folosită pe acest site (nu e un diagnostic).",
+      belowReference: "Dacă rezultatul e sub referința laboratorului",
+      aboveReference: "Dacă rezultatul e peste referința laboratorului",
+      disclaimer:
+        "Informațiile sunt educative și nu înlocuiesc consultul medical. Folosește intervalul de pe buletin și discută rezultatele cu un specialist.",
     },
     breadcrumbs: {
       home: "Acasă",

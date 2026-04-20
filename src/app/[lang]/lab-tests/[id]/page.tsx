@@ -1,15 +1,16 @@
+import SingleTest from "@/components/medicalTests/SingleTest";
+import { labTestsList } from "@/data/labTestsList";
+import { LangType } from "@/types/types";
+
 export default async function LabTestByIdPage({
   params,
 }: {
-  params: Promise<{ lang: string; id: string }>;
+  params: Promise<{ lang: LangType; id: string }>;
 }) {
-  await params;
-  return (
-    <section
-      className="min-h-[50vh] bg-white py-12 md:py-16"
-      aria-label="Lab test"
-    >
-      Single Page
-    </section>
-  );
+  const { id, lang } = await params;
+  const test = labTestsList.find((t) => t.id === Number(id));
+  if (!test) {
+    return <div>Test not found</div>;
+  }
+  return <SingleTest test={test} lang={lang} />;
 }

@@ -45,3 +45,41 @@ export type LabTestCategoryKey =
   keyof (typeof labTestsOptions)["en"]["categories"];
 export type LabTestSubcategoryKey =
   keyof (typeof labTestsOptions)["en"]["subcategories"];
+
+export type LocalizedString = { en: string; ro: string };
+export type LabTestDetailHighlight = {
+  icon: string;
+  title: LocalizedString;
+  text: LocalizedString;
+};
+export type LabTestCollectionStep = {
+  icon: string;
+  label: LocalizedString;
+};
+export type LabTestDetail = {
+  whatItMeasures: LocalizedString;
+  whyItMatters: LocalizedString;
+  typicalTurnaround: LocalizedString;
+  referenceMin: string;
+  referenceMax: string;
+  longDescription: LocalizedString;
+  belowReference: LocalizedString;
+  aboveReference: LocalizedString;
+  stepSpecial: LocalizedString;
+};
+
+export type TestType = {
+  id: number;
+  image: string;
+  name: {
+    en: string;
+    ro: string;
+  };
+  description: {
+    en: string;
+    ro: string;
+  };
+  category: LabTestCategoryKey;
+  subcategory: LabTestSubcategoryKey;
+  detailPage?: LabTestDetail;
+};

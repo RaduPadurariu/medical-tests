@@ -5,8 +5,14 @@ import { useMedicalBreadcrumb } from "@/hooks/useMedicalBreadcrumb";
 import { LangType } from "@/types/types";
 import Link from "next/link";
 
-const MedicalBreadcrumbs = ({ lang }: { lang: LangType }) => {
-  const breadcrumbs = useMedicalBreadcrumb({ lang });
+const MedicalBreadcrumbs = ({
+  lang,
+  currentPageLabel,
+}: {
+  lang: LangType;
+  currentPageLabel?: string;
+}) => {
+  const breadcrumbs = useMedicalBreadcrumb({ lang, currentPageLabel });
 
   return (
     <div className="w-full  bg-[#f8f9fa]">
