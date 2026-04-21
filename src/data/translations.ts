@@ -129,11 +129,29 @@ export const translations = {
       labTests: "Lab Tests",
       contact: "Contact",
       myList: "My List",
+      login: "Login",
+      register: "Register",
     },
     myListPage: {
       title: "My List",
       description:
         "Here you can see all the tests selected and export them in PDF.",
+    },
+    loginPage: {
+      title: "Login",
+      description:
+        "Login to your account to access your test list and print PDF.",
+      continueWithGoogle: "Continue with Google",
+      switchPrompt: "Don't have an account?",
+      switchLink: "Register",
+    },
+    registerPage: {
+      title: "Register",
+      description:
+        "Register to create your account and access your test list and print PDF.",
+      continueWithGoogle: "Continue with Google",
+      switchPrompt: "Already have an account?",
+      switchLink: "Log in",
     },
     contactPage: {
       title: "Contact",
@@ -310,11 +328,29 @@ export const translations = {
       labTests: "Analize medicale",
       contact: "Contact",
       myList: "Lista mea",
+      login: "Autentificare",
+      register: "Înregistrare",
     },
     myListPage: {
       title: "Lista mea",
       description:
         "Aici poți vedea toate analizele selectate și să le exportezi în PDF.",
+    },
+    loginPage: {
+      title: "Autentificare",
+      description:
+        "Autentifică-te în contul tău pentru a accesa lista ta de analize și să generezi un PDF.",
+      continueWithGoogle: "Continuă cu Google",
+      switchPrompt: "Nu ai cont?",
+      switchLink: "Înregistrare",
+    },
+    registerPage: {
+      title: "Înregistrare",
+      description:
+        "Înregistrează-te pentru a crea un cont și să accesezi lista ta de analize și să generezi un PDF.",
+      continueWithGoogle: "Continuă cu Google",
+      switchPrompt: "Ai deja cont?",
+      switchLink: "Autentificare",
     },
     contactPage: {
       title: "Contact",

@@ -22,7 +22,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "myMedicalTests | Manage & Print Medical Test Lists",
+  title: "Medical Tests",
   description:
     "A full-stack web application for managing and printing medical test checklists. Built with Next.js, TypeScript, MongoDB, and NextAuth.",
 
