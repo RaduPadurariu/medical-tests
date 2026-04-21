@@ -145,7 +145,7 @@ const ContactForm = ({ lang }: { lang: LangType }) => {
 
       <button
         type="submit"
-        className="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-(--secondary-color) px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="mt-6 inline-flex cursor-pointer w-full items-center justify-center rounded-lg bg-(--secondary-color) px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {t.submit}
       </button>

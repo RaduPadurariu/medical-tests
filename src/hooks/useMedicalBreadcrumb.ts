@@ -25,6 +25,8 @@ export const useMedicalBreadcrumb = ({
         [`/${lang}/lab-tests`]: t.labTests,
         [`/${lang}/contact`]: t.contact,
         [`/${lang}/my-list`]: t.myList,
+        [`/${lang}/login`]: t.login,
+        [`/${lang}/register`]: t.register,
       };
 
       const fallback =
