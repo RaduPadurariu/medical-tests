@@ -60,8 +60,11 @@ export type LabTestDetail = {
   whatItMeasures: LocalizedString;
   whyItMatters: LocalizedString;
   typicalTurnaround: LocalizedString;
-  referenceMin: string;
-  referenceMax: string;
+  referenceMinMale: string;
+  referenceMaxMale: string;
+  referenceMinFemale: string;
+  referenceMaxFemale: string;
+  unitMeasure: string;
   longDescription: LocalizedString;
   belowReference: LocalizedString;
   aboveReference: LocalizedString;

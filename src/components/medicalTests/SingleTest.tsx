@@ -9,6 +9,7 @@ import Image from "next/image";
 import PageHeader from "../pageHeader/PageHeader";
 import MedicalBreadcrumbs from "../breadcrumbs/MedicalBreadcrumbs";
 import { translations } from "@/data/translations";
+import LabTestAddToListButton from "./LabTestAddToListButton";
 
 const SingleTest = ({ test, lang }: { test: TestType; lang: LangType }) => {
   const title = test.name[lang];
@@ -19,6 +20,7 @@ const SingleTest = ({ test, lang }: { test: TestType; lang: LangType }) => {
     options.subcategories[test.subcategory as LabTestSubcategoryKey];
 
   const detail = translations[lang].singleTestPage;
+  const medicalTestsLabels = translations[lang].medicalTests;
 
   return (
     <section className="py-12 md:py-16">
@@ -94,24 +96,41 @@ const SingleTest = ({ test, lang }: { test: TestType; lang: LangType }) => {
               <p className="text-center text-xs font-semibold uppercase tracking-wide text-(--text-muted)">
                 {detail.referenceRangeTitle}
               </p>
-              <div className="mt-3 flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-(--secondary-color)">
-                    {test.detailPage?.referenceMin}
-                  </p>
-                  <p className="mt-0.5 text-xs text-(--text-muted)">
-                    {detail.unit}
-                  </p>
-                </div>
-                <div className="hidden h-10 w-px bg-(--border-color) sm:block" />
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-(--secondary-color)">
-                    {test.detailPage?.referenceMax}
-                  </p>
-                  <p className="mt-0.5 text-xs text-(--text-muted)">
-                    {detail.unit}
+              <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div className="rounded-lg border border-(--border-color) px-3 py-2 text-center">
+                  <p className="flex flex-wrap items-center justify-center gap-1.5 text-xs sm:text-sm">
+                    <span className="font-semibold uppercase tracking-wide text-(--text-muted)">
+                      {detail.men}
+                    </span>
+                    <span className="font-bold text-(--secondary-color)">
+                      {test.detailPage?.referenceMinMale} -{" "}
+                      {test.detailPage?.referenceMaxMale}
+                    </span>
+                    <span className="text-(--text-muted)">
+                      {test.detailPage?.unitMeasure}
+                    </span>
                   </p>
                 </div>
+                <div className="rounded-lg border border-(--border-color) px-3 py-2 text-center">
+                  <p className="flex flex-wrap items-center justify-center gap-1.5 text-xs sm:text-sm">
+                    <span className="font-semibold uppercase tracking-wide text-(--text-muted)">
+                      {detail.women}
+                    </span>
+                    <span className="font-bold text-(--secondary-color)">
+                      {test.detailPage?.referenceMinFemale} -{" "}
+                      {test.detailPage?.referenceMaxFemale}
+                    </span>
+                    <span className="text-(--text-muted)">
+                      {test.detailPage?.unitMeasure}
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="mt-3 flex justify-center">
+                <LabTestAddToListButton
+                  addLabel={medicalTestsLabels.addToList}
+                  addedLabel={medicalTestsLabels.addToListDone}
+                />
               </div>
             </div>
           </div>
