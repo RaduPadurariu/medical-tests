@@ -6,8 +6,8 @@ import {
   TestType,
 } from "@/types/types";
 import Image from "next/image";
-import PageHeader from "../pageHeader/PageHeader";
-import MedicalBreadcrumbs from "../breadcrumbs/MedicalBreadcrumbs";
+import PageHeader from "../common/pageHeader/PageHeader";
+import MedicalBreadcrumbs from "../common/breadcrumbs/MedicalBreadcrumbs";
 import { translations } from "@/data/translations";
 import LabTestAddToListButton from "./LabTestAddToListButton";
 
