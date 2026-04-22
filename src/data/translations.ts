@@ -105,7 +105,8 @@ export const translations = {
       highlightsMatters: "Why it matters",
       highlightsTurnaround: "Typical turnaround",
       referenceRangeTitle: "Typical adult reference interval (serum)",
-      unit: "g/L",
+      men: "Men",
+      women: "Women",
       sectionTitle: "About this test",
       stepsTitle: "BEFORE YOU GO TO THE LAB (INFORMATIVE)",
       stepList:
@@ -124,6 +125,12 @@ export const translations = {
       disclaimer:
         "Information on this page is educational and does not replace medical advice. Use your laboratory’s reference interval and discuss results with a qualified professional.",
     },
+    accountPage: {
+      title: "Account",
+      description: "Manage your account and preferences.",
+      helloUser: "Welcome, ",
+      deleteAccount: "Delete account",
+    },
     breadcrumbs: {
       home: "Home",
       labTests: "Lab Tests",
@@ -131,6 +138,7 @@ export const translations = {
       myList: "My List",
       login: "Login",
       register: "Register",
+      account: "Account",
     },
     myListPage: {
       title: "My List",
@@ -304,7 +312,8 @@ export const translations = {
       highlightsMatters: "De ce contează",
       highlightsTurnaround: "Timp orientativ până la rezultat",
       referenceRangeTitle: "Interval de referință tipic adult (ser)",
-      unit: "g/L",
+      men: "Barbati",
+      women: "Femei",
       sectionTitle: "Despre această analiză",
       stepsTitle: "ÎNAINTE DE A MERGE LA LABORATOR (INFORMATIV)",
       stepList:
@@ -323,6 +332,12 @@ export const translations = {
       disclaimer:
         "Informațiile sunt educative și nu înlocuiesc consultul medical. Folosește intervalul de pe buletin și discută rezultatele cu un specialist.",
     },
+    accountPage: {
+      title: "Cont",
+      description: "Gestionează-ți contul și preferințele.",
+      helloUser: "Bun venit, ",
+      deleteAccount: "Șterge contul",
+    },
     breadcrumbs: {
       home: "Acasă",
       labTests: "Analize medicale",
@@ -330,6 +345,7 @@ export const translations = {
       myList: "Lista mea",
       login: "Autentificare",
       register: "Înregistrare",
+      account: "Cont",
     },
     myListPage: {
       title: "Lista mea",
