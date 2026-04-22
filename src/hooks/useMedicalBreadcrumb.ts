@@ -24,10 +24,12 @@ export const useMedicalBreadcrumb = ({
         [`/${lang}`]: t.home,
         [`/${lang}/lab-tests`]: t.labTests,
         [`/${lang}/contact`]: t.contact,
-        [`/${lang}/my-list`]: t.myList,
         [`/${lang}/login`]: t.login,
         [`/${lang}/register`]: t.register,
         [`/${lang}/account`]: t.account,
+        [`/${lang}/account/my-list`]: t.myList,
+        [`/${lang}/account/my-list/edit-print-header`]: t.editPrintHeader,
+        [`/${lang}/account/my-list/print-preview`]: t.printPreview,
       };
 
       const fallback =

@@ -14,7 +14,7 @@ export default async function Layout({ children, params }: LangLayoutType) {
   return (
     <div className="flex min-h-dvh flex-col">
       <Header lang={lang as LangType} />
-      <main className="flex-1 pt-30">{children}</main>
+      <main className="flex-1 pt-30 print:pt-0">{children}</main>
       <Footer lang={lang as LangType} />
     </div>
   );

@@ -1,5 +1,5 @@
-import MedicalBreadcrumbs from "@/components/breadcrumbs/MedicalBreadcrumbs";
-import PageHeader from "@/components/pageHeader/PageHeader";
+import MedicalBreadcrumbs from "@/components/common/breadcrumbs/MedicalBreadcrumbs";
+import PageHeader from "@/components/common/pageHeader/PageHeader";
 import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
 import LoginForm from "./LoginForm";

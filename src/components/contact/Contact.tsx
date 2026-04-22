@@ -3,8 +3,8 @@
 import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
 import Link from "next/link";
-import PageHeader from "../pageHeader/PageHeader";
-import MedicalBreadcrumbs from "../breadcrumbs/MedicalBreadcrumbs";
+import PageHeader from "../common/pageHeader/PageHeader";
+import MedicalBreadcrumbs from "../common/breadcrumbs/MedicalBreadcrumbs";
 import ContactForm from "./ContactForm";
 
 const Contact = ({ lang }: { lang: LangType }) => {

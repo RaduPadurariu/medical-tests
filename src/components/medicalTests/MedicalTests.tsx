@@ -1,6 +1,6 @@
 import { LangType } from "@/types/types";
-import Breadcrumbs from "../breadcrumbs/MedicalBreadcrumbs";
-import PageHeader from "../pageHeader/PageHeader";
+import Breadcrumbs from "../common/breadcrumbs/MedicalBreadcrumbs";
+import PageHeader from "../common/pageHeader/PageHeader";
 import { translations } from "@/data/translations";
 import MedicalTestsFilterSection from "./MedicalTestsFilterSection";
 import MedicalTestsList from "./MedicalTestsList";
