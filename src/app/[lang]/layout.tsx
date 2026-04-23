@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/header/Header";
+import AuthSessionProvider from "@/components/providers/AuthSessionProvider";
 import { LangLayoutType, LangType } from "@/types/types";
 const locales = ["en", "ro"] as const;
 
@@ -12,10 +13,12 @@ export default async function Layout({ children, params }: LangLayoutType) {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col">
-      <Header lang={lang as LangType} />
-      <main className="flex-1 pt-30 print:pt-0">{children}</main>
-      <Footer lang={lang as LangType} />
-    </div>
+    <AuthSessionProvider>
+      <div className="flex min-h-dvh flex-col">
+        <Header lang={lang as LangType} />
+        <main className="flex-1 pt-30 print:pt-0">{children}</main>
+        <Footer lang={lang as LangType} />
+      </div>
+    </AuthSessionProvider>
   );
 }

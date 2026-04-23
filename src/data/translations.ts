@@ -8,7 +8,7 @@ export const translations = {
     },
     auth: {
       signup: "Sign up",
-      login: "Log in",
+      signin: "Sign in",
       profile: "Profile",
       logout: "Log out",
     },
@@ -130,17 +130,33 @@ export const translations = {
       description: "Manage your account and preferences.",
       helloUser: "Welcome, ",
       deleteAccount: "Delete account",
+      deleteAccountLoading: "Deleting...",
+      deleteAccountConfirm: "Are you sure you want to delete your account?",
+      deleteAccountError: "Could not delete account. Please try again.",
+      deleteAccountSuccess: "Your account was deleted successfully.",
+    },
+    legal: {
+      privacyPolicy: {
+        title: "Privacy Policy",
+        description: "Privacy Policy",
+      },
+      termsOfService: {
+        title: "Terms of Service",
+        description: "Terms of Service",
+      },
     },
     breadcrumbs: {
       home: "Home",
       labTests: "Lab Tests",
       contact: "Contact",
       myList: "My List",
-      login: "Login",
+      signin: "Sign in",
       register: "Register",
       account: "Account",
       editPrintHeader: "Edit print header",
       printPreview: "Print preview",
+      privacyPolicy: "Privacy Policy",
+      termsOfService: "Terms of Service",
     },
     myListPage: {
       title: "My List",
@@ -194,10 +210,10 @@ export const translations = {
         testsTitle: "Requested lab tests",
       },
     },
-    loginPage: {
-      title: "Login",
+    signinPage: {
+      title: "Sing in",
       description:
-        "Login to your account to access your test list and print PDF.",
+        "Sign in to your account to access your test list and print PDF.",
       continueWithGoogle: "Continue with Google",
       switchPrompt: "Don't have an account?",
       switchLink: "Register",
@@ -265,7 +281,7 @@ export const translations = {
     },
     auth: {
       signup: "Înregistrare",
-      login: "Autentificare",
+      signin: "Autentificare",
       profile: "Profil",
       logout: "Deconectare",
     },
@@ -386,17 +402,33 @@ export const translations = {
       description: "Gestionează-ți contul și preferințele.",
       helloUser: "Bun venit, ",
       deleteAccount: "Șterge contul",
+      deleteAccountLoading: "Se șterge...",
+      deleteAccountConfirm: "Sigur vrei să îți ștergi contul?",
+      deleteAccountError: "Contul nu a putut fi șters. Încearcă din nou.",
+      deleteAccountSuccess: "Contul a fost șters cu succes.",
+    },
+    legal: {
+      privacyPolicy: {
+        title: "Politica de confidențialitate",
+        description: "Politica de confidențialitate",
+      },
+      termsOfService: {
+        title: "Termeni și condiții",
+        description: "Termeni și condiții",
+      },
     },
     breadcrumbs: {
       home: "Acasă",
       labTests: "Analize medicale",
       contact: "Contact",
       myList: "Lista mea",
-      login: "Autentificare",
+      signin: "Autentificare",
       register: "Înregistrare",
       account: "Cont",
       editPrintHeader: "Editează antetul de print",
       printPreview: "Previzualizare print",
+      privacyPolicy: "Politica de confidențialitate",
+      termsOfService: "Termeni și condiții",
     },
     myListPage: {
       title: "Lista mea",
@@ -449,7 +481,7 @@ export const translations = {
         testsTitle: "Analize solicitate",
       },
     },
-    loginPage: {
+    signinPage: {
       title: "Autentificare",
       description:
         "Autentifică-te în contul tău pentru a accesa lista ta de analize și să generezi un PDF.",
