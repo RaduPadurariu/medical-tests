@@ -1,11 +1,11 @@
-import Login from "@/components/auth/login/Login";
+import SignIn from "@/components/auth/signin/SignIn";
 import { LangType } from "@/types/types";
 
-export default async function LoginPage({
+export default async function SignInPage({
   params,
 }: {
   params: Promise<{ lang: LangType }>;
 }) {
   const { lang } = await params;
-  return <Login lang={lang} />;
+  return <SignIn lang={lang} />;
 }

@@ -2,19 +2,19 @@ import MedicalBreadcrumbs from "@/components/common/breadcrumbs/MedicalBreadcrum
 import PageHeader from "@/components/common/pageHeader/PageHeader";
 import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
-import LoginForm from "./LoginForm";
+import SignInForm from "./SignInForm";
 
-const Login = ({ lang }: { lang: LangType }) => {
-  const t = translations[lang].loginPage;
+const SignIn = ({ lang }: { lang: LangType }) => {
+  const t = translations[lang].signinPage;
   return (
     <section className=" py-12 md:py-16">
       <PageHeader title={t.title} description={t.description} />
       <MedicalBreadcrumbs lang={lang} />
       <div className="medical-container mt-8 lg:mt-10">
-        <LoginForm lang={lang} />
+        <SignInForm lang={lang} />
       </div>
     </section>
   );
 };
 
-export default Login;
+export default SignIn;

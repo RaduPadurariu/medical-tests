@@ -24,12 +24,14 @@ export const useMedicalBreadcrumb = ({
         [`/${lang}`]: t.home,
         [`/${lang}/lab-tests`]: t.labTests,
         [`/${lang}/contact`]: t.contact,
-        [`/${lang}/login`]: t.login,
+        [`/${lang}/signin`]: t.signin,
         [`/${lang}/register`]: t.register,
         [`/${lang}/account`]: t.account,
         [`/${lang}/account/my-list`]: t.myList,
         [`/${lang}/account/my-list/edit-print-header`]: t.editPrintHeader,
         [`/${lang}/account/my-list/print-preview`]: t.printPreview,
+        [`/${lang}/privacy-policy`]: t.privacyPolicy,
+        [`/${lang}/terms-of-service`]: t.termsOfService,
       };
 
       const fallback =
