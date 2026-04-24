@@ -68,7 +68,7 @@ const HeroSection = ({ lang }: { lang: LangType }) => {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <Link
-                href={`/${lang}/register`}
+                href={`/${lang}/signin`}
                 className="inline-flex items-center gap-2 rounded-md bg-(--secondary-color) px-6 py-3 text-sm font-medium text-(--light-color) transition-colors hover:bg-blue-600"
               >
                 <i className="fa-solid fa-clipboard-list text-sm" />

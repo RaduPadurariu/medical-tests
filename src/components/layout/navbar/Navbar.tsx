@@ -6,9 +6,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
+import { useSession } from "next-auth/react";
 
 const Navbar = ({ lang }: { lang: LangType }) => {
   const [navOpen, setNavOpen] = useState(false);
+
+  const { status } = useSession();
+  const myListHref =
+    status === "authenticated" ? `/${lang}/account/my-list` : `/${lang}/signin`;
   return (
     <nav
       className={`${navOpen ? "fixed inset-0 bg-[#212529CC] z-999" : ""} md:static`}
@@ -30,7 +35,7 @@ const Navbar = ({ lang }: { lang: LangType }) => {
         <li className="ml-5 md:ml-7 mt-1.5 self-start">
           <Link
             onClick={() => setNavOpen(false)}
-            href={`/${lang}/account/my-list`}
+            href={myListHref}
             className="px-5 py-2 flex items-center gap-2 rounded-full cursor-pointer bg-(--secondary-color) text-white border-2 border-(--secondary-color) font-semibold transition-all duration-300 hover:bg-blue-600 hover:shadow-md leading-none"
           >
             <i className="fa-solid fa-notes-medical text-base"></i>

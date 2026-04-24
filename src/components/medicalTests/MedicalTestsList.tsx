@@ -7,8 +7,8 @@ import {
 } from "@/types/types";
 import LabTestAddToListButton from "./LabTestAddToListButton";
 import { translations } from "@/data/translations";
-import Link from "next/link";
 import Pagination from "./Pagination";
+import Link from "next/link";
 
 const MedicalTestsList = ({
   lang,

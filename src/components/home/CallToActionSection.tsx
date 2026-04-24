@@ -15,7 +15,7 @@ const CallToActionSection = ({ lang }: { lang: LangType }) => {
           <p className="mt-4 text-lg text-white/80">{t.description}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href={`/${lang}/register`}
+              href={`/${lang}/signin`}
               className="inline-flex items-center gap-2 rounded-md bg-(--light-color) px-6 py-3 text-sm font-medium text-(--heading-color) transition-colors hover:bg-white after:content-['→'] after:ml-1 after:transition-transform hover:after:translate-x-1"
             >
               {t.getStarted}
