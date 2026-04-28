@@ -11,12 +11,14 @@ const MedicalTests = ({
   subcategory,
   q,
   page,
+  savedAnalysisNames,
 }: {
   lang: LangType;
   category: string;
   subcategory: string;
   q: string;
   page: string;
+  savedAnalysisNames: string[];
 }) => {
   const t = translations[lang].medicalTests;
 
@@ -38,6 +40,7 @@ const MedicalTests = ({
         subcategory={subcategory}
         q={q}
         page={page}
+        savedAnalysisNames={savedAnalysisNames}
       />
     </section>
   );

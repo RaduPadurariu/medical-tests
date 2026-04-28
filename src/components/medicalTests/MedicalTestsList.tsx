@@ -17,6 +17,7 @@ const MedicalTestsList = ({
   subcategory,
   q,
   page,
+  savedAnalysisNames,
 }: {
   lang: LangType;
   t: (typeof translations)[LangType]["medicalTests"];
@@ -24,12 +25,16 @@ const MedicalTestsList = ({
   subcategory: string;
   q: string;
   page: string;
+  savedAnalysisNames: string[];
 }) => {
   const options = labTestsOptions[lang];
   const activeCategory = category && category !== "all" ? category : undefined;
   const activeSubcategory =
     subcategory && subcategory !== "all" ? subcategory : undefined;
   const needle = q.trim().toLowerCase();
+  const normalizedSavedNames = new Set(
+    savedAnalysisNames.map((name) => name.trim().toLocaleLowerCase()),
+  );
 
   // Filter tests
   const filteredTests = labTestsList.filter((test) => {
@@ -106,6 +111,11 @@ const MedicalTestsList = ({
                       <LabTestAddToListButton
                         addLabel={t.addToList}
                         addedLabel={t.addToListDone}
+                        test={test}
+                        lang={lang}
+                        isInitiallyAdded={normalizedSavedNames.has(
+                          test.name[lang].trim().toLocaleLowerCase(),
+                        )}
                         className="min-w-[min(100%,10.5rem)] flex-1"
                       />
                       <Link

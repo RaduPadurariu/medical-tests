@@ -11,7 +11,15 @@ import MedicalBreadcrumbs from "../common/breadcrumbs/MedicalBreadcrumbs";
 import { translations } from "@/data/translations";
 import LabTestAddToListButton from "./LabTestAddToListButton";
 
-const SingleTest = ({ test, lang }: { test: TestType; lang: LangType }) => {
+const SingleTest = ({
+  test,
+  lang,
+  savedAnalysisNames,
+}: {
+  test: TestType;
+  lang: LangType;
+  savedAnalysisNames: string[];
+}) => {
   const title = test.name[lang];
   const shortDescription = test.description[lang];
   const options = labTestsOptions[lang];
@@ -21,6 +29,9 @@ const SingleTest = ({ test, lang }: { test: TestType; lang: LangType }) => {
 
   const detail = translations[lang].singleTestPage;
   const medicalTestsLabels = translations[lang].medicalTests;
+  const isInitiallyAdded = savedAnalysisNames
+    .map((name) => name.trim().toLocaleLowerCase())
+    .includes(test.name[lang].trim().toLocaleLowerCase());
 
   return (
     <section className="py-12 md:py-16">
@@ -130,6 +141,9 @@ const SingleTest = ({ test, lang }: { test: TestType; lang: LangType }) => {
                 <LabTestAddToListButton
                   addLabel={medicalTestsLabels.addToList}
                   addedLabel={medicalTestsLabels.addToListDone}
+                  test={test}
+                  lang={lang}
+                  isInitiallyAdded={isInitiallyAdded}
                 />
               </div>
             </div>

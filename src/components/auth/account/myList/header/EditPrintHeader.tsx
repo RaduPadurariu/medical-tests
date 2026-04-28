@@ -4,17 +4,109 @@ import PageHeader from "@/components/common/pageHeader/PageHeader";
 import MedicalBreadcrumbs from "@/components/common/breadcrumbs/MedicalBreadcrumbs";
 import { translations } from "@/data/translations";
 import { useEditPrintHeader } from "@/hooks/useEditPrintHeader";
-import { LangType } from "@/types/types";
+import { HeaderDataType, LangType } from "@/types/types";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
-const EditPrintHeader = ({ lang }: { lang: LangType }) => {
+const EditPrintHeader = ({
+  lang,
+  initialHeaderData,
+}: {
+  lang: LangType;
+  initialHeaderData: HeaderDataType;
+}) => {
   const t = translations[lang].myListPage.editPrintHeaderPage;
   const myListT = translations[lang].myListPage;
-  const { state, dispatch } = useEditPrintHeader();
+  const { state, dispatch } = useEditPrintHeader(initialHeaderData);
+  const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  // Check if there are any unsaved changes
+  const isDirty =
+    state.fullName !== initialHeaderData.fullName ||
+    state.age !== initialHeaderData.age ||
+    state.sex !== initialHeaderData.sex ||
+    state.city !== initialHeaderData.city;
+
+  const message = t.confirmCancel;
+
+  // Set unsaved changes guard
+  useEffect(() => {
+    if (!isDirty) return;
+
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      // Chrome/Safari ignora custom text, dar trebuie setat pt trigger.
+      event.returnValue = message;
+      return message;
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [isDirty, message]);
+
+  // Handle back button
+  useEffect(() => {
+    if (!isDirty) return;
+
+    // Add a history entry so the first Back press can be intercepted.
+    window.history.pushState(null, "", window.location.href);
+
+    const handlePopState = () => {
+      if (window.confirm(message)) {
+        window.removeEventListener("popstate", handlePopState);
+        router.back();
+        return;
+      }
+
+      // Keep user on current page when canceling leave.
+      window.history.pushState(null, "", window.location.href);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [isDirty, message, router]);
+
+  // Handle form submission
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Save logic will be wired when backend profile update is added.
+    if (isSubmitting) return;
+    setSubmitError("");
+    setIsSubmitting(true);
+
+    try {
+      const updateHeaderData = await fetch("/api/account", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: state.fullName,
+          age: state.age,
+          sex: state.sex,
+          city: state.city,
+        }),
+      });
+      if (!updateHeaderData.ok) {
+        throw new Error("Failed to update header data");
+      }
+      router.push(`/${lang}/account/my-list`);
+    } catch (error) {
+      console.error(error);
+      setSubmitError(t.saveError);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Confirm leave page
+  const confirmLeave = () => {
+    if (!isDirty) return true;
+    return window.confirm(message);
   };
 
   return (
@@ -96,9 +188,6 @@ const EditPrintHeader = ({ lang }: { lang: LangType }) => {
                 <option value="female">
                   {myListT.editPrintHeaderPage.sexOptionFemale}
                 </option>
-                <option value="preferNotToSay">
-                  {myListT.editPrintHeaderPage.sexOptionPreferNotToSay}
-                </option>
               </select>
             </div>
 
@@ -124,6 +213,11 @@ const EditPrintHeader = ({ lang }: { lang: LangType }) => {
 
           <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
             <Link
+              onClick={(e) => {
+                if (!confirmLeave()) {
+                  e.preventDefault();
+                }
+              }}
               href={`/${lang}/account/my-list`}
               className="inline-flex w-full items-center justify-center rounded-lg border border-(--border-color) bg-white px-5 py-3 text-sm font-semibold text-(--heading-color) transition-colors hover:bg-slate-50 sm:w-auto"
             >
@@ -131,11 +225,17 @@ const EditPrintHeader = ({ lang }: { lang: LangType }) => {
             </Link>
             <button
               type="submit"
+              disabled={isSubmitting}
               className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-(--secondary-color) px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 sm:w-auto"
             >
-              {t.saveButton}
+              {isSubmitting ? t.savingButton : t.saveButton}
             </button>
           </div>
+          {submitError && (
+            <p className="mt-3 text-sm text-red-600" role="alert">
+              {submitError}
+            </p>
+          )}
         </form>
       </div>
     </section>

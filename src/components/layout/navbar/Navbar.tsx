@@ -8,7 +8,7 @@ import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
 import { useSession } from "next-auth/react";
 
-const Navbar = ({ lang }: { lang: LangType }) => {
+const Navbar = ({ lang, myListCount }: { lang: LangType; myListCount: number }) => {
   const [navOpen, setNavOpen] = useState(false);
 
   const { status } = useSession();
@@ -40,7 +40,7 @@ const Navbar = ({ lang }: { lang: LangType }) => {
           >
             <i className="fa-solid fa-notes-medical text-base"></i>
             <span className="text-[17px] md:text-[15px] font-medium">
-              {translations[lang].nav.myList} (0)
+              {translations[lang].nav.myList} ({myListCount})
             </span>
           </Link>
         </li>

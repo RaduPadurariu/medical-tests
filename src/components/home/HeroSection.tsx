@@ -3,8 +3,15 @@ import { LangType } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const HeroSection = ({ lang }: { lang: LangType }) => {
+const HeroSection = ({
+  lang,
+  isAuthenticated,
+}: {
+  lang: LangType;
+  isAuthenticated: boolean;
+}) => {
   const t = translations[lang].home.heroSection;
+  const getStartedHref = isAuthenticated ? `/${lang}/account/my-list` : `/${lang}/signin`;
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-(--light-color) via-(--light-color) to-(--secondary-color)/10 py-16 lg:py-24">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl" />
@@ -68,7 +75,7 @@ const HeroSection = ({ lang }: { lang: LangType }) => {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <Link
-                href={`/${lang}/signin`}
+                href={getStartedHref}
                 className="inline-flex items-center gap-2 rounded-md bg-(--secondary-color) px-6 py-3 text-sm font-medium text-(--light-color) transition-colors hover:bg-blue-600"
               >
                 <i className="fa-solid fa-clipboard-list text-sm" />

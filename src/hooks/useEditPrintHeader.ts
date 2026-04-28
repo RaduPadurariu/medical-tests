@@ -1,3 +1,4 @@
+import { HeaderDataType } from "@/types/types";
 import { useReducer } from "react";
 
 type State = {
@@ -11,15 +12,7 @@ type Action =
   | { type: "SET_FULL_NAME"; payload: string }
   | { type: "SET_AGE"; payload: string }
   | { type: "SET_SEX"; payload: string }
-  | { type: "SET_CITY"; payload: string }
-  | { type: "RESET_FORM" };
-
-export const initialState: State = {
-  fullName: "",
-  age: "",
-  sex: "",
-  city: "",
-};
+  | { type: "SET_CITY"; payload: string };
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -31,15 +24,13 @@ function reducer(state: State, action: Action): State {
       return { ...state, sex: action.payload };
     case "SET_CITY":
       return { ...state, city: action.payload };
-    case "RESET_FORM":
-      return initialState;
     default:
       return state;
   }
 }
 
-export const useEditPrintHeader = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export const useEditPrintHeader = (initialHeaderData: HeaderDataType) => {
+  const [state, dispatch] = useReducer(reducer, initialHeaderData);
 
   return { state, dispatch };
 };

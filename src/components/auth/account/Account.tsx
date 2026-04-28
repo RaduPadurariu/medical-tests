@@ -7,19 +7,12 @@ import { LangType } from "@/types/types";
 import { signOut } from "next-auth/react";
 import { useState } from "react";
 
-const Account = ({
-  lang,
-  userName,
-  isLoggedIn,
-}: {
-  lang: LangType;
-  userName: string;
-  isLoggedIn: boolean;
-}) => {
+const Account = ({ lang, userName }: { lang: LangType; userName: string }) => {
   const t = translations[lang].accountPage;
   const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDeleteAccount = async () => {
+    if (isDeleting) return;
     const shouldDelete = window.confirm(t.deleteAccountConfirm);
 
     if (!shouldDelete) {
@@ -56,7 +49,7 @@ const Account = ({
           <button
             type="button"
             onClick={handleDeleteAccount}
-            disabled={!isLoggedIn || isDeleting}
+            disabled={isDeleting}
             className="cursor-pointer rounded-lg bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
           >
             {isDeleting ? t.deleteAccountLoading : t.deleteAccount}
