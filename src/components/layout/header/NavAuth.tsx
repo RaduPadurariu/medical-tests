@@ -1,14 +1,16 @@
-"use client";
-
 import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
-import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import LogoutButton from "./LogoutButton";
 
-const NavAuth = ({ lang }: { lang: LangType }) => {
+const NavAuth = ({
+  lang,
+  isAuthenticated,
+}: {
+  lang: LangType;
+  isAuthenticated: boolean;
+}) => {
   const t = translations[lang].auth;
-  const { status } = useSession();
-  const isAuthenticated = status === "authenticated";
 
   return (
     <ul className="text-white text-sm flex items-center justify-center text-center">
@@ -17,15 +19,7 @@ const NavAuth = ({ lang }: { lang: LangType }) => {
           <li className="ml-4">
             <Link href={`/${lang}/account`}>{t.profile}</Link>
           </li>
-          <li className="ml-4">
-            <button
-              type="button"
-              className="cursor-pointer"
-              onClick={() => signOut({ callbackUrl: `/${lang}` })}
-            >
-              {t.logout}
-            </button>
-          </li>
+          <LogoutButton lang={lang} />
         </>
       ) : (
         <li className="ml-4">

@@ -3,8 +3,15 @@ import Link from "next/link";
 import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
 
-const CallToActionSection = ({ lang }: { lang: LangType }) => {
+const CallToActionSection = ({
+  lang,
+  isAuthenticated,
+}: {
+  lang: LangType;
+  isAuthenticated: boolean;
+}) => {
   const t = translations[lang].home.callToAction;
+  const getStartedHref = isAuthenticated ? `/${lang}/account/my-list` : `/${lang}/signin`;
   return (
     <section className="bg-(--secondary-color) py-16 lg:py-20">
       <div className="medical-container">
@@ -15,7 +22,7 @@ const CallToActionSection = ({ lang }: { lang: LangType }) => {
           <p className="mt-4 text-lg text-white/80">{t.description}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href={`/${lang}/signin`}
+              href={getStartedHref}
               className="inline-flex items-center gap-2 rounded-md bg-(--light-color) px-6 py-3 text-sm font-medium text-(--heading-color) transition-colors hover:bg-white after:content-['→'] after:ml-1 after:transition-transform hover:after:translate-x-1"
             >
               {t.getStarted}

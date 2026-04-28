@@ -48,7 +48,7 @@ export const termsContent: Record<LangType, TermsContentType> = {
       {
         title: "4. User Data and Profile Information",
         paragraphs: [
-          "You may provide profile data in the app, including full name, age, location, and sex.",
+          "You may provide profile data in the app, including full name, age, city, and sex.",
           "You are responsible for ensuring that the data you submit is accurate.",
         ],
       },

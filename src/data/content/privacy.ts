@@ -28,7 +28,7 @@ export const privacyContent: Record<LangType, PrivacyContentType> = {
         title: "1. Data We Collect",
         paragraphs: [
           "When you sign in with Google, we collect your email address and your name from your Google account.",
-          "Inside the app, we store the profile data you enter: full name, age, location, and sex.",
+          "Inside the app, we store the profile data you enter: full name, age, city and sex.",
           "We do not request extra profile fields beyond the information listed above.",
         ],
       },

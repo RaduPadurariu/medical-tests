@@ -86,3 +86,53 @@ export type TestType = {
   subcategory: LabTestSubcategoryKey;
   detailPage?: LabTestDetail;
 };
+
+// User type for the frontend
+export type UserType = {
+  id: string;
+  email: string;
+  name: string;
+  headerData: HeaderDataType;
+  savedAnalyses: SavedAnalysisType[];
+};
+
+export type HeaderDataType = {
+  fullName: string;
+  age: string;
+  sex: SexType | "";
+  city: string;
+};
+
+export type SavedAnalysisType = {
+  id: string;
+  name: string;
+};
+
+export type SexType = "male" | "female";
+
+// Database user type
+export type dbUserType = {
+  _id: string;
+  email: string;
+  name: string | null;
+  headerData: DBUserHeaderDataType;
+  savedAnalyses: DBUserSavedAnalysisType[];
+};
+
+export type DBUserHeaderDataType = {
+  fullName: string | null;
+  age: string | null;
+  sex: SexType | null;
+  city: string | null;
+};
+
+export type DBUserSavedAnalysisType = {
+  _id: string | { toString: () => string };
+  name: string;
+};
+
+// Return type for useUnsavedChangesGuard
+export type UseUnsavedChangesGuardParams = {
+  isDirty: boolean;
+  message?: string;
+};

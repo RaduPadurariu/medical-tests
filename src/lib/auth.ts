@@ -28,7 +28,7 @@ export const authOptions: NextAuthOptions = {
         {
           $set: {
             email: user.email.toLowerCase(),
-            name: user.name ?? null,
+            name: user.name ? user.name : null,
           },
         },
         { upsert: true, new: true, setDefaultsOnInsert: true },
