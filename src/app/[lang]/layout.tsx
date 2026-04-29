@@ -7,6 +7,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { buildInitialUserData } from "@/lib/buildInitialUserData";
 import { getCurrentUser } from "@/lib/currentUser";
+
 const locales = ["en", "ro"] as const;
 
 export default async function Layout({ children, params }: LangLayoutType) {

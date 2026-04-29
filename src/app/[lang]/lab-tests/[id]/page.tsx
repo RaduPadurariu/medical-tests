@@ -2,6 +2,7 @@ import SingleTest from "@/components/medicalTests/SingleTest";
 import { labTestsList } from "@/data/labTestsList";
 import { buildInitialUserData } from "@/lib/buildInitialUserData";
 import { getCurrentUser } from "@/lib/currentUser";
+import { notFound } from "next/navigation";
 import { LangType, dbUserType } from "@/types/types";
 
 export default async function LabTestByIdPage({
@@ -16,7 +17,7 @@ export default async function LabTestByIdPage({
     (analysis) => analysis.name,
   );
   if (!test) {
-    return <div>Test not found</div>;
+    notFound();
   }
   return (
     <SingleTest
