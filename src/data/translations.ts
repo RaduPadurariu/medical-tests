@@ -296,6 +296,19 @@ export const translations = {
         },
       ],
     },
+    notFound: {
+      title: "Page not found",
+      description:
+        "Sorry, the page you are looking for does not exist or has been moved.",
+      goHome: "Go Home",
+    },
+    globalError: {
+      title: "Something went wrong",
+      description:
+        "An unexpected error occurred. You can try again or go back home.",
+      retry: "Retry",
+      goHome: "Go Home",
+    },
   },
   ro: {
     nav: {
@@ -592,6 +605,19 @@ export const translations = {
           a: "Folosește formularul cu „Raport eroare” sau scrie-ne direct la adresa din dreapta.",
         },
       ],
+    },
+    notFound: {
+      title: "Pagina nu a fost găsită",
+      description:
+        "Ne pare rău, pagina pe care o cauți nu există sau a fost mutată.",
+      goHome: "Mergi acasă",
+    },
+    globalError: {
+      title: "Ceva nu a mers bine",
+      description:
+        "A apărut o eroare neașteptată. Poți încerca din nou sau să revii acasă.",
+      retry: "Reîncearcă",
+      goHome: "Mergi acasă",
     },
   },
 };
