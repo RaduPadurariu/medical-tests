@@ -11,7 +11,9 @@ const HeroSection = ({
   isAuthenticated: boolean;
 }) => {
   const t = translations[lang].home.heroSection;
-  const getStartedHref = isAuthenticated ? `/${lang}/account/my-list` : `/${lang}/signin`;
+  const getStartedHref = isAuthenticated
+    ? `/${lang}/lab-tests`
+    : `/${lang}/signin`;
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-(--light-color) via-(--light-color) to-(--secondary-color)/10 py-16 lg:py-24">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl" />
@@ -81,12 +83,12 @@ const HeroSection = ({
                 <i className="fa-solid fa-clipboard-list text-sm" />
                 {t.cta.getStarted}
               </Link>
-              <Link
+              {/* <Link
                 href={`/${lang}/lab-tests`}
                 className="inline-flex items-center rounded-md border border-(--border-color) bg-transparent px-6 py-3 text-sm font-medium text-(--heading-color) transition-colors hover:bg-(--secondary-color)/10"
               >
                 {t.cta.viewLabTests}
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -95,33 +97,30 @@ const HeroSection = ({
               <Image
                 src="/images/hero-img.jpg"
                 alt="Laboratory professional"
-                className="object-cover"
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover object-center"
                 priority
-                width={1024}
-                height={1024}
               />
             </div>
 
             {/* Floating Card - Top Right */}
-            <div className="absolute top-8 flex flex-col items-center gap-3 rounded-xl border border-(--border-color) bg-white/95 p-4 shadow-lg backdrop-blur right-0">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-(--secondary-color)/10">
-                <i className="fa-solid fa-clipboard-list text-(--secondary-color)" />
+            <div className="absolute top-8 right-0 flex flex-col items-center gap-3 rounded-xl border border-(--border-color) bg-white/95 p-4 shadow-lg backdrop-blur max-w-[130px] text-center">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-(--secondary-color)/10 shrink-0">
+                <i className="fa-solid fa-bolt text-(--secondary-color)" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-(--heading-color)">
-                  {t.floatingCard.myTestList}
-                </p>
-                <p className="text-xs text-(--text-muted)">
-                  0 {t.floatingCard.testsSelected}
+                <p className="text-sm font-semibold text-(--heading-color) leading-tight">
+                  {t.floatingCard.quickSetup}
                 </p>
               </div>
             </div>
 
             {/* Floating Card - Bottom Left */}
             <div className="absolute bottom-16 rounded-xl border border-(--border-color) bg-white/95 p-4 shadow-lg backdrop-blur left-0">
-              <div className="flex items-center gap-1 text-amber-500">
+              <div className="flex items-center text-amber-500">
                 {[...Array(5)].map((_, i) => (
-                  <i key={i} className="fa-solid fa-star text-sm" />
+                  <i key={i} className="fa-solid fa-star text-sm mr-0.5" />
                 ))}
               </div>
               <p className="mt-4 mb-3 text-lg font-bold text-(--heading-color)">

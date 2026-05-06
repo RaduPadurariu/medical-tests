@@ -7,13 +7,13 @@ export const labTestsOptions = {
     sampleTypeLabel: "Sample type",
     clinicalAreaLabel: "Clinical area",
     categories: {
-      all: "All samples types",
+      all: "All sample types",
       blood: "Blood tests",
       urine: "Urine tests",
       stool: "Stool tests",
     },
     subcategories: {
-      all: "All topics",
+      all: "All clinical areas",
       general: "General & inflammation",
       heart: "Heart & lipids",
       diabetes: "Diabetes",
@@ -36,7 +36,7 @@ export const labTestsOptions = {
       stool: "Analize de fecale",
     },
     subcategories: {
-      all: "Toate domeniile",
+      all: "Toate specialitățile",
       general: "General & inflamare",
       heart: "Inimă & lipide",
       diabetes: "Diabet",

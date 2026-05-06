@@ -8,7 +8,13 @@ import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
 import { useSession } from "next-auth/react";
 
-const Navbar = ({ lang, myListCount }: { lang: LangType; myListCount: number }) => {
+const Navbar = ({
+  lang,
+  myListCount,
+}: {
+  lang: LangType;
+  myListCount: number;
+}) => {
   const [navOpen, setNavOpen] = useState(false);
 
   const { status } = useSession();
@@ -40,7 +46,8 @@ const Navbar = ({ lang, myListCount }: { lang: LangType; myListCount: number }) 
           >
             <i className="fa-solid fa-notes-medical text-base"></i>
             <span className="text-[17px] md:text-[15px] font-medium">
-              {translations[lang].nav.myList} ({myListCount})
+              {translations[lang].nav.myList}{" "}
+              {status === "authenticated" ? `(${myListCount})` : ""}
             </span>
           </Link>
         </li>

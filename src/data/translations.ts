@@ -46,7 +46,7 @@ export const translations = {
           viewLabTests: "View Lab Tests",
         },
         floatingCard: {
-          myTestList: "My Test List",
+          quickSetup: "Quick setup",
           testsSelected: "tests selected",
           pdfReady: "PDF Ready",
           printableExport: "Printable export",
@@ -57,7 +57,7 @@ export const translations = {
         description:
           "Join today and create your first test list in minutes. It's completely free.",
         getStarted: "Get Started",
-        viewLabTests: "View Lab Tests",
+        viewYourList: "View Your List",
       },
       howItWorks: {
         howItWorksTitle: "How It Works",
@@ -66,15 +66,15 @@ export const translations = {
         howItWorksSteps: [
           {
             id: "01",
-            title: "Create an Account",
+            title: "Google Sign-In",
             description:
-              "Sign up for free in seconds. All you need is an email address to get started.",
+              "Quickly connect using your Google account. Get started in just seconds.",
           },
           {
             id: "02",
-            title: "Browse & Select Tests",
+            title: "Browse & Select",
             description:
-              "Explore our catalog of lab tests. Click to add any test you need to your personal list.",
+              "Explore the catalog and add the tests you need to your personal list.",
           },
           {
             id: "03",
@@ -86,7 +86,7 @@ export const translations = {
             id: "04",
             title: "Print & Go",
             description:
-              "Generate a PDF with your test list. Print it and bring it to your preferred laboratory.",
+              "Generate your PDF and take it to any medical laboratory.",
           },
         ],
       },
@@ -165,6 +165,9 @@ export const translations = {
       printHeaderSectionTitle: "Optional print header details",
       printHeaderSectionDescription:
         "Fill in these details if you want them to appear in the printed document header.",
+      showPrintHeaderButton: "Show header",
+      hidePrintHeaderButton: "Hide header",
+      printHeaderCollapsedNote: "Header is hidden.",
       fullNameLabel: "Full name",
       ageLabel: "Age",
       sexLabel: "Sex",
@@ -262,6 +265,8 @@ export const translations = {
         namePlaceholder: "Your name",
         email: "Email",
         emailPlaceholder: "you@example.com",
+        demoNotice:
+          "Demo form: messages are not sent. For real contact, please use the email shown on this page.",
         subject: "Subject",
         subjectGeneral: "General",
         subjectBug: "Bug report",
@@ -288,11 +293,11 @@ export const translations = {
         },
         {
           q: "Where is my data stored?",
-          a: "When you sign in, your saved list can be stored in a database. This contact form is frontend-only until you connect a service.",
+          a: "When you sign in, your saved test list is stored in MongoDB. The contact form is currently demo-only and does not send messages to a backend service.",
         },
         {
           q: "How do I report a problem?",
-          a: "Use the form with “Bug report” or email us directly from the address on the right.",
+          a: "Please email us directly at the address above and include as many details as possible (steps, device/browser, and screenshots if available).",
         },
       ],
     },
@@ -310,6 +315,9 @@ export const translations = {
       goHome: "Go Home",
     },
   },
+
+  // ------------------------------------------------------------
+
   ro: {
     nav: {
       home: "Acasă",
@@ -333,10 +341,10 @@ export const translations = {
         headline: {
           start: "Organizează",
           middle: "analizele",
-          end: "în cateva minute",
+          end: "în câteva minute",
         },
         description:
-          "Creează lista ta personală de analize, păstrează urmărirea testelor pe care le ai nevoie și generează un PDF profesional pentru a le duce la laborator. Simplu, organizat și accesibil mereu.",
+          "Creează-ți propria listă de analize, monitorizează testele de care ai nevoie și generează un PDF profesional pentru laborator. Totul este simplu, organizat și mereu accesibil.",
         stats: {
           tests: {
             value: "20+",
@@ -356,7 +364,7 @@ export const translations = {
           viewLabTests: "Vezi analize",
         },
         floatingCard: {
-          myTestList: "Lista de analize",
+          quickSetup: "Configurare rapidă",
           testsSelected: "analize selectate",
           pdfReady: "PDF gata",
           printableExport: "Exportabil",
@@ -365,38 +373,38 @@ export const translations = {
       callToAction: {
         title: "Gata să organizezi analizele?",
         description:
-          "Alătură-te astăzi și creează prima listă de teste în minute. Este complet gratuit.",
+          "Creează-ți lista de analize în câteva minute și export-o în PDF.",
         getStarted: "Începe",
-        viewLabTests: "Vezi analize",
+        viewYourList: "Vezi lista ta",
       },
       howItWorks: {
-        howItWorksTitle: "Cum funcționează ",
+        howItWorksTitle: "Cum funcționează",
         howItWorksDescription:
           "Creează-ți lista de analize în doar patru pași simpli.",
         howItWorksSteps: [
           {
             id: "01",
-            title: "Creează un cont",
+            title: "Autentificare Google",
             description:
-              "Înregistrează-te gratuit în câteva secunde. Ai nevoie doar de o adresă de email.",
+              "Conectează-te rapid cu contul tău Google. Totul este gata în câteva secunde.",
           },
           {
             id: "02",
-            title: "Caută și selectează analize",
+            title: "Caută și selectează",
             description:
-              "Explorează catalogul nostru de analize. Adaugă testele dorite în lista ta personală.",
+              "Explorează catalogul și adaugă analizele dorite în lista ta personală.",
           },
           {
             id: "03",
             title: "Verifică lista",
             description:
-              "Revizuiește analizele selectate și asigură-te că totul este corect.",
+              "Revizuiește selecția, fă ajustări și asigură-te că totul este corect.",
           },
           {
             id: "04",
-            title: "Printează și mergi",
+            title: "Tipărește și prezintă",
             description:
-              "Generează un PDF cu lista ta și du-l la laboratorul ales.",
+              "Generează PDF-ul și prezintă-l la orice laborator de analize medicale.",
           },
         ],
       },
@@ -475,6 +483,9 @@ export const translations = {
       printHeaderSectionTitle: "Date optionale pentru antetul de print",
       printHeaderSectionDescription:
         "Completează aceste date dacă vrei să apară în antetul documentului printat.",
+      showPrintHeaderButton: "Arată antetul",
+      hidePrintHeaderButton: "Ascunde antetul",
+      printHeaderCollapsedNote: "Antet ascuns.",
       fullNameLabel: "Nume complet",
       ageLabel: "Vârstă",
       sexLabel: "Sex",
@@ -571,6 +582,8 @@ export const translations = {
         namePlaceholder: "Numele tău",
         email: "Email",
         emailPlaceholder: "tu@exemplu.com",
+        demoNotice:
+          "Formular demo: mesajele nu se trimit. Pentru contact real, folosește adresa de email din această pagină.",
         subject: "Subiect",
         subjectGeneral: "General",
         subjectBug: "Raport eroare",
@@ -598,11 +611,11 @@ export const translations = {
         },
         {
           q: "Unde sunt stocate datele mele?",
-          a: "După autentificare, lista salvată poate fi într-o bază de date. Acest formular de contact este doar frontend până conectezi un serviciu.",
+          a: "După autentificare, lista ta de analize este salvată în MongoDB. Formularul de contact este momentan doar demo și nu trimite mesaje către un serviciu backend.",
         },
         {
           q: "Cum raportez o problemă?",
-          a: "Folosește formularul cu „Raport eroare” sau scrie-ne direct la adresa din dreapta.",
+          a: "Te rugăm să ne scrii direct pe email la adresa de mai sus și să incluzi cât mai multe detalii (pași, dispozitiv/browser și capturi de ecran, dacă ai).",
         },
       ],
     },

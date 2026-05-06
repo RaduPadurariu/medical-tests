@@ -223,11 +223,11 @@ const SingleTest = ({
                     {test.detailPage?.belowReference[lang]}
                   </p>
                 </div>
-                <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 p-4 text-sm text-(--heading-color)">
-                  <p className="font-semibold text-sky-900">
+                <div className="rounded-xl border border-red-200/80 bg-red-50/80 p-4 text-sm text-(--heading-color)">
+                  <p className="font-semibold text-red-900">
                     {detail.aboveReference}
                   </p>
-                  <p className="mt-2 leading-relaxed text-sky-950/90">
+                  <p className="mt-2 leading-relaxed text-red-950/90">
                     {test.detailPage?.aboveReference[lang]}
                   </p>
                 </div>

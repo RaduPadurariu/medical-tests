@@ -11,7 +11,13 @@ const CallToActionSection = ({
   isAuthenticated: boolean;
 }) => {
   const t = translations[lang].home.callToAction;
-  const getStartedHref = isAuthenticated ? `/${lang}/account/my-list` : `/${lang}/signin`;
+  const getStartedHref = isAuthenticated
+    ? `/${lang}/lab-tests`
+    : `/${lang}/signin`;
+
+  const getYourListHref = isAuthenticated
+    ? `/${lang}/account/my-list`
+    : `/${lang}/signin`;
   return (
     <section className="bg-(--secondary-color) py-16 lg:py-20">
       <div className="medical-container">
@@ -28,10 +34,10 @@ const CallToActionSection = ({
               {t.getStarted}
             </Link>
             <Link
-              href={`/${lang}/lab-tests`}
+              href={getYourListHref}
               className="inline-flex items-center rounded-md border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
             >
-              {t.viewLabTests}
+              {t.viewYourList}
             </Link>
           </div>
         </div>

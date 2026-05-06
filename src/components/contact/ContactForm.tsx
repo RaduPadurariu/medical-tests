@@ -46,6 +46,10 @@ const ContactForm = ({ lang }: { lang: LangType }) => {
       className="rounded-xl border border-(--border-color) bg-white p-6 shadow-sm md:p-8"
       noValidate
     >
+      <p className="mb-5 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+        {t.demoNotice}
+      </p>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="sm:col-span-1">
           <label
