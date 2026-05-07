@@ -22,10 +22,13 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Medical Tests",
+  metadataBase: new URL("https://medical-tests.vercel.app"),
+  title: {
+    default: "Medical Tests",
+    template: "%s | Medical Tests",
+  },
   description:
-    "A full-stack web application for managing and printing medical test checklists. Built with Next.js, TypeScript, MongoDB, and NextAuth.",
-
+    "A full-stack web application for managing and printing medical test checklists. Built with Next.js, MongoDB, and NextAuth.",
   keywords: [
     "medical tests",
     "health checklist",
@@ -50,11 +53,56 @@ export const metadata: Metadata = {
     },
   ],
 
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://medical-tests.vercel.app",
+    siteName: "Medical Tests",
+    title: "Medical Tests",
+    description:
+      "A full-stack web application for managing and printing medical test checklists.",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Medical Tests application preview",
+      },
+    ],
+    locale: "en_US",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Medical Tests",
+    description:
+      "A full-stack web application for managing and printing medical test checklists.",
+    images: ["/images/og-image.jpg"],
+  },
+
   creator: "Radu Padurariu",
+  publisher: "Radu Padurariu",
 
   icons: {
     icon: "/images/icon.png",
+    shortcut: "/images/icon.png",
+    apple: "/images/icon.png",
   },
+  category: "health",
 };
 
 export default function RootLayout({
