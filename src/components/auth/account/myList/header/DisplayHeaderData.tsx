@@ -8,9 +8,11 @@ import { useEffect, useState } from "react";
 const DisplayHeaderData = ({
   lang,
   currentUser,
+  successMessage,
 }: {
   lang: LangType;
   currentUser: UserType;
+  successMessage?: string;
 }) => {
   const t = translations[lang].myListPage;
   const storageKey = "my-list-print-header-collapsed";
@@ -108,6 +110,11 @@ const DisplayHeaderData = ({
             >
               {t.editPrintHeaderButton}
             </Link>
+            {successMessage ? (
+              <p className="mt-3 text-sm text-emerald-700" role="status">
+                {successMessage}
+              </p>
+            ) : null}
           </div>
         </>
       ) : (
@@ -119,6 +126,11 @@ const DisplayHeaderData = ({
           >
             {t.editPrintHeaderButton}
           </Link>
+          {successMessage ? (
+            <p className="text-sm text-emerald-700" role="status">
+              {successMessage}
+            </p>
+          ) : null}
         </div>
       )}
     </div>

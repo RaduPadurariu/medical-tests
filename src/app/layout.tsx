@@ -21,6 +21,7 @@ const lato = Lato({
   variable: "--nav-font",
 });
 
+// Metadata for the entire application
 export const metadata: Metadata = {
   metadataBase: new URL("https://medical-tests.vercel.app"),
   title: {

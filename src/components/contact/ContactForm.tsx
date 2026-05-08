@@ -9,18 +9,20 @@ const ContactForm = ({ lang }: { lang: LangType }) => {
   const { state, dispatch } = useContact();
   const t = translations[lang].contactPage.form;
 
-  const nameErrors = state.isAfterSubmit ? checkName(state.name) : [];
-  const emailErrors = state.isAfterSubmit ? checkEmail(state.email) : [];
-  const messageErrors = state.isAfterSubmit ? checkMessage(state.message) : [];
+  const nameErrors = state.isAfterSubmit ? checkName(state.name, lang) : [];
+  const emailErrors = state.isAfterSubmit ? checkEmail(state.email, lang) : [];
+  const messageErrors = state.isAfterSubmit
+    ? checkMessage(state.message, lang)
+    : [];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     dispatch({ type: "SET_IS_AFTER_SUBMIT", payload: true });
 
-    const nameErrors = checkName(state.name);
-    const emailErrors = checkEmail(state.email);
-    const messageErrors = checkMessage(state.message);
+    const nameErrors = checkName(state.name, lang);
+    const emailErrors = checkEmail(state.email, lang);
+    const messageErrors = checkMessage(state.message, lang);
 
     if (
       nameErrors.length > 0 ||
@@ -38,7 +40,7 @@ const ContactForm = ({ lang }: { lang: LangType }) => {
     dispatch({ type: "SET_SUBMIT_STATUS", payload: true });
     setTimeout(() => {
       dispatch({ type: "SET_SUBMIT_STATUS", payload: false });
-    }, 3000);
+    }, 5000);
   };
   return (
     <form

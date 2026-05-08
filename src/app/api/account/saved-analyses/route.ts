@@ -4,6 +4,7 @@ import User from "@/models/User";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
+// Add test to list
 export async function POST(request: Request) {
   try {
     const session = await getServerSession(authOptions);
@@ -72,6 +73,7 @@ export async function POST(request: Request) {
   }
 }
 
+// Delete all tests
 export async function DELETE() {
   try {
     const session = await getServerSession(authOptions);

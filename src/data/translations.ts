@@ -96,6 +96,7 @@ export const translations = {
       description:
         "Explore our catalog of lab tests. Click to add any test you need to your personal list.",
       addToList: "Add to list",
+      addToListLoading: "Adding...",
       addToListDone: "Added to list",
       learnMore: "Learn more",
       noTestsFound: "No tests found",
@@ -174,9 +175,11 @@ export const translations = {
       cityLabel: "City",
       notProvided: "Not provided",
       editPrintHeaderButton: "Edit print header",
+      editPrintHeaderSuccess: "Print header details saved successfully.",
       testsSectionTitle: "Selected tests",
       testsSectionDescription:
         "Manage your test list before printing. You can add, edit, or delete tests.",
+      editTestSuccess: "Test updated successfully.",
       newTestPlaceholder: "Add a new test name",
       addTestButton: "Add",
       addTestError: "Could not add test. Please try again.",
@@ -186,6 +189,8 @@ export const translations = {
       editTestError: "Could not edit test. Please try again.",
       deleteButton: "Delete",
       deleteTestError: "Could not delete test. Please try again.",
+      deletingTestButton: "Deleting...",
+      deleteTestConfirm: "Are you sure you want to delete this test?",
       deleteAllTestsButton: "Delete all",
       deletingAllTestsButton: "Deleting...",
       deleteAllTestsConfirm:
@@ -215,6 +220,7 @@ export const translations = {
         saveButton: "Save",
         savingButton: "Saving...",
         saveError: "Could not save test details. Please try again.",
+        nameRequired: "Test name is required",
         duplicateNameError: "This test already exists in your list.",
         cancelButton: "Cancel",
         confirmCancel:
@@ -277,6 +283,10 @@ export const translations = {
         submit: "Send message",
         errorRequired: "Please fill in all fields.",
         errorEmail: "Please enter a valid email address.",
+        nameRequired: "Name is required",
+        emailRequired: "Email is required",
+        emailInvalid: "Please enter a valid email address",
+        messageRequired: "Message is required",
       },
       aside: {
         emailTitle: "Email",
@@ -313,6 +323,9 @@ export const translations = {
         "An unexpected error occurred. You can try again or go back home.",
       retry: "Retry",
       goHome: "Go Home",
+    },
+    toastErrors: {
+      addTestError: "Could not add this test right now. Please try again.",
     },
   },
 
@@ -414,6 +427,7 @@ export const translations = {
       description:
         "Explorează catalogul nostru de analize. Adaugă testele dorite în lista ta personală.",
       addToList: "Adaugă în listă",
+      addToListLoading: "Se adaugă...",
       addToListDone: "Adăugat în listă",
       learnMore: "Află mai mult",
       noTestsFound: "Nu s-au găsit analize",
@@ -492,9 +506,11 @@ export const translations = {
       cityLabel: "Localitate",
       notProvided: "Necompletat",
       editPrintHeaderButton: "Editează antetul de print",
+      editPrintHeaderSuccess: "Datele antetului au fost salvate cu succes.",
       testsSectionTitle: "Analize selectate",
       testsSectionDescription:
         "Gestionează lista de analize înainte de print. Poți adăuga, edita sau șterge analize.",
+      editTestSuccess: "Analiza a fost actualizată cu succes.",
       newTestPlaceholder: "Adaugă numele unei analize",
       addTestButton: "Adaugă",
       addTestError: "Nu s-a putut adăuga analiza. Încearcă din nou.",
@@ -504,6 +520,8 @@ export const translations = {
       editTestError: "Nu s-a putut edita analiza. Încearcă din nou.",
       deleteButton: "Șterge",
       deleteTestError: "Nu s-a putut șterge analiza. Încearcă din nou.",
+      deletingTestButton: "Se șterge...",
+      deleteTestConfirm: "Sigur vrei să ștergi această analiză?",
       deleteAllTestsButton: "Șterge tot",
       deletingAllTestsButton: "Se șterge...",
       deleteAllTestsConfirm: "Sigur vrei să ștergi toate analizele din listă?",
@@ -533,6 +551,7 @@ export const translations = {
         saveButton: "Salvează",
         savingButton: "Se salvează...",
         saveError: "Nu s-au putut salva datele analizei. Încearcă din nou.",
+        nameRequired: "Numele analizei este obligatoriu",
         duplicateNameError: "Aceasta analiza exista deja in lista ta.",
         cancelButton: "Anulează",
         confirmCancel:
@@ -595,6 +614,10 @@ export const translations = {
         submit: "Trimite mesaj",
         errorRequired: "Completează toate câmpurile.",
         errorEmail: "Introdu o adresă de email validă.",
+        nameRequired: "Numele este obligatoriu",
+        emailRequired: "Email-ul este obligatoriu",
+        emailInvalid: "Introdu o adresă de email validă",
+        messageRequired: "Mesajul este obligatoriu",
       },
       aside: {
         emailTitle: "Email",
@@ -631,6 +654,9 @@ export const translations = {
         "A apărut o eroare neașteptată. Poți încerca din nou sau să revii acasă.",
       retry: "Reîncearcă",
       goHome: "Mergi acasă",
+    },
+    toastErrors: {
+      addTestError: "Nu s-a putut adăuga analiza. Încearcă din nou.",
     },
   },
 };

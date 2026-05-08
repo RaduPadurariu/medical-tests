@@ -2,25 +2,40 @@ import { translations } from "@/data/translations";
 import { LangType, UserType } from "@/types/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const MyListTests = ({
   lang,
   currentUser,
+  successMessage,
 }: {
   lang: LangType;
   currentUser: UserType;
+  successMessage?: string;
 }) => {
   const t = translations[lang].myListPage;
   const router = useRouter();
   const [listNameInput, setListNameInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [deletingTestId, setDeletingTestId] = useState<string | null>(null);
   const [isDeletingAll, setIsDeletingAll] = useState(false);
+  const [visibleSavedAnalyses, setVisibleSavedAnalyses] = useState(
+    currentUser.savedAnalyses,
+  );
   const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(successMessage ?? "");
   const canAddTest = useMemo(
     () => listNameInput.trim().length > 0,
     [listNameInput],
   );
+
+  useEffect(() => {
+    setVisibleSavedAnalyses(currentUser.savedAnalyses);
+  }, [currentUser.savedAnalyses]);
+
+  useEffect(() => {
+    setSubmitSuccess(successMessage ?? "");
+  }, [successMessage]);
 
   const handleAddTest = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -29,7 +44,7 @@ const MyListTests = ({
     if (isSubmitting) return;
 
     const normalizedName = trimmedName.toLocaleLowerCase();
-    const alreadyExists = currentUser.savedAnalyses.some(
+    const alreadyExists = visibleSavedAnalyses.some(
       (analysis) => analysis.name.trim().toLocaleLowerCase() === normalizedName,
     );
     if (alreadyExists) {
@@ -38,6 +53,7 @@ const MyListTests = ({
     }
 
     setSubmitError("");
+    setSubmitSuccess("");
     setIsSubmitting(true);
 
     try {
@@ -71,6 +87,11 @@ const MyListTests = ({
   };
 
   const handleDeleteTest = async (id: string) => {
+    if (deletingTestId) return;
+    if (!window.confirm(t.deleteTestConfirm)) return;
+    setSubmitError("");
+    setSubmitSuccess("");
+    setDeletingTestId(id);
     try {
       const deleteTest = await fetch(`/api/account/saved-analyses/${id}`, {
         method: "DELETE",
@@ -78,18 +99,24 @@ const MyListTests = ({
       if (!deleteTest.ok) {
         throw new Error("Failed to delete test");
       }
+      setVisibleSavedAnalyses((prevAnalyses) =>
+        prevAnalyses.filter((analysis) => analysis.id !== id),
+      );
       router.refresh();
     } catch (error) {
       console.error(error);
       setSubmitError(t.deleteTestError);
+    } finally {
+      setDeletingTestId(null);
     }
   };
 
   const handleDeleteAllTests = async () => {
-    if (isDeletingAll || currentUser.savedAnalyses.length === 0) return;
+    if (isDeletingAll || visibleSavedAnalyses.length === 0) return;
     if (!window.confirm(t.deleteAllTestsConfirm)) return;
 
     setSubmitError("");
+    setSubmitSuccess("");
     setIsDeletingAll(true);
     try {
       const deleteAllTests = await fetch("/api/account/saved-analyses", {
@@ -98,6 +125,7 @@ const MyListTests = ({
       if (!deleteAllTests.ok) {
         throw new Error("Failed to delete all tests");
       }
+      setVisibleSavedAnalyses([]);
       router.refresh();
     } catch (error) {
       console.error(error);
@@ -125,6 +153,9 @@ const MyListTests = ({
             if (submitError) {
               setSubmitError("");
             }
+            if (submitSuccess) {
+              setSubmitSuccess("");
+            }
           }}
           placeholder={t.newTestPlaceholder}
           className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition-colors focus:border-blue-500"
@@ -142,8 +173,13 @@ const MyListTests = ({
           {submitError}
         </p>
       )}
+      {!submitError && submitSuccess ? (
+        <p className="mt-3 text-sm text-emerald-700" role="status">
+          {submitSuccess}
+        </p>
+      ) : null}
 
-      {currentUser.savedAnalyses.length > 0 && (
+      {visibleSavedAnalyses.length > 0 && (
         <div className="mt-4 flex justify-end">
           <button
             type="button"
@@ -157,13 +193,13 @@ const MyListTests = ({
       )}
 
       <ul className="mt-6 grid gap-3">
-        {currentUser.savedAnalyses.length === 0 && (
+        {visibleSavedAnalyses.length === 0 && (
           <li className="rounded-lg border border-dashed border-slate-300 px-4 py-3 text-sm text-slate-500">
             {t.emptyListMessage}
           </li>
         )}
 
-        {currentUser.savedAnalyses.map((item) => {
+        {visibleSavedAnalyses.map((item) => {
           return (
             <li
               key={item.id}
@@ -180,10 +216,13 @@ const MyListTests = ({
                 </Link>
                 <button
                   type="button"
+                  disabled={deletingTestId === item.id}
                   onClick={() => handleDeleteTest(item.id)}
                   className="cursor-pointer rounded-lg bg-red-600 px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-red-700"
                 >
-                  {t.deleteButton}
+                  {deletingTestId === item.id
+                    ? t.deletingAllTestsButton
+                    : t.deleteButton}
                 </button>
               </div>
             </li>

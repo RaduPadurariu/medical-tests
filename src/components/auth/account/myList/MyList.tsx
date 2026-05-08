@@ -11,19 +11,33 @@ import MyListTests from "./MyListTests";
 const MyList = ({
   lang,
   currentUser,
+  success,
 }: {
   lang: LangType;
   currentUser: UserType;
+  success?: string;
 }) => {
   const t = translations[lang].myListPage;
+  const testsSuccessMessage =
+    success === "test-updated" ? t.editTestSuccess : undefined;
+  const headerSuccessMessage =
+    success === "header-updated" ? t.editPrintHeaderSuccess : undefined;
 
   return (
     <section className="py-12 md:py-16">
       <PageHeader title={t.title} description={t.description} />
       <MedicalBreadcrumbs lang={lang} />
       <div className="medical-container mt-8 grid gap-8 lg:mt-10">
-        <DisplayHeaderData lang={lang} currentUser={currentUser} />
-        <MyListTests lang={lang} currentUser={currentUser} />
+        <DisplayHeaderData
+          lang={lang}
+          currentUser={currentUser}
+          successMessage={headerSuccessMessage}
+        />
+        <MyListTests
+          lang={lang}
+          currentUser={currentUser}
+          successMessage={testsSuccessMessage}
+        />
         <div className="flex justify-end">
           <Link
             href={`/${lang}/account/my-list/print-preview`}

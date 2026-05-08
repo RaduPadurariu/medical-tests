@@ -24,7 +24,7 @@ const EditTest = ({
     if (isSubmitting) return;
     const trimmedName = name.trim();
     if (!trimmedName) {
-      setError(t.saveError);
+      setError(t.nameRequired);
       return;
     }
 
@@ -50,7 +50,7 @@ const EditTest = ({
       if (!response.ok) {
         throw new Error("Failed to update test");
       }
-      router.push(`/${lang}/account/my-list`);
+      router.push(`/${lang}/account/my-list?success=test-updated`);
     } catch (error) {
       console.error(error);
       setError(t.saveError);

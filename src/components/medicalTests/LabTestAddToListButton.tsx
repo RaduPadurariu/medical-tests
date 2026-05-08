@@ -5,6 +5,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { LangType, TestType } from "@/types/types";
+import { useToastContext } from "@/context/toastContext/useToastContext";
+import { translations } from "@/data/translations";
 
 type Props = {
   addLabel: string;
@@ -27,6 +29,9 @@ export default function LabTestAddToListButton({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { status } = useSession();
   const router = useRouter();
+  const { showToast } = useToastContext();
+  const t = translations[lang].toastErrors;
+  const medicalTestsLabels = translations[lang].medicalTests;
 
   const signInHref = `/${lang}/signin`;
   const testName = test.name[lang];
@@ -51,36 +56,40 @@ export default function LabTestAddToListButton({
       }
 
       console.error("Failed to add test to list");
+      showToast(t.addTestError, "error");
     } catch (error) {
       console.error(error);
+      showToast(t.addTestError, "error");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  return (
-    status === "authenticated" ? (
-      <button
-        type="button"
-        onClick={handleAddToList}
-        aria-pressed={added}
-        aria-live="polite"
-        disabled={added || isSubmitting}
-        className={`inline-flex min-h-[42px] cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border-2 px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
-          added
-            ? "cursor-default border-(--success-color) bg-(--success-color)/10 text-(--success-color)"
-            : "border-(--secondary-color) bg-(--secondary-color) text-white hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-blue-400"
-        } ${className}`}
-      >
-        {added ? addedLabel : addLabel}
-      </button>
-    ) : (
-      <Link
-        href={signInHref}
-        className={`inline-flex min-h-[42px] cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border-2 px-4 py-2.5 text-sm font-semibold transition-all duration-200 border-(--secondary-color) bg-(--secondary-color) text-white hover:bg-blue-600 ${className}`}
-      >
-        {addLabel}
-      </Link>
-    )
+  return status === "authenticated" ? (
+    <button
+      type="button"
+      onClick={handleAddToList}
+      aria-pressed={added}
+      aria-live="polite"
+      disabled={added || isSubmitting}
+      className={`inline-flex min-h-[42px] cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border-2 px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
+        added
+          ? "cursor-default border-(--success-color) bg-(--success-color)/10 text-(--success-color)"
+          : "border-(--secondary-color) bg-(--secondary-color) text-white hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-blue-400"
+      } ${className}`}
+    >
+      {added
+        ? addedLabel
+        : isSubmitting
+          ? medicalTestsLabels.addToListLoading
+          : addLabel}
+    </button>
+  ) : (
+    <Link
+      href={signInHref}
+      className={`inline-flex min-h-[42px] cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border-2 px-4 py-2.5 text-sm font-semibold transition-all duration-200 border-(--secondary-color) bg-(--secondary-color) text-white hover:bg-blue-600 ${className}`}
+    >
+      {addLabel}
+    </Link>
   );
 }
