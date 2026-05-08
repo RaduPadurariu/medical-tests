@@ -4,6 +4,7 @@ import User from "@/models/User";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
+// Update test name
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> },
@@ -85,6 +86,7 @@ export async function PATCH(
   }
 }
 
+// Delete test
 export async function DELETE(
   _request: Request,
   { params }: { params: Promise<{ id: string }> },

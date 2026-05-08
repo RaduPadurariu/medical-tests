@@ -1,5 +1,3 @@
-"use client";
-
 import { translations } from "@/data/translations";
 import { LangType } from "@/types/types";
 import Link from "next/link";
@@ -13,10 +11,6 @@ const Contact = ({ lang }: { lang: LangType }) => {
   return (
     <section className=" py-12 md:py-16">
       <PageHeader title={t.title} description={t.description} />
-      {/* <p className="mt-4 rounded-lg border border-(--border-color) bg-white/80 px-4 py-3 text-left text-sm text-(--text-muted)">
-          {t.disclaimer}
-        </p> */}
-
       <MedicalBreadcrumbs lang={lang} />
       <div className="medical-container mt-8 lg:mt-10">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">

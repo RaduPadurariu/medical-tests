@@ -5,6 +5,7 @@ import { DBUserHeaderDataType } from "@/types/types";
 import { getServerSession } from "next-auth/next";
 import { NextResponse } from "next/server";
 
+// Delete account
 export async function DELETE() {
   try {
     const session = await getServerSession(authOptions);
@@ -29,6 +30,7 @@ export async function DELETE() {
   }
 }
 
+// Update header data
 export async function PATCH(request: Request) {
   try {
     const session = await getServerSession(authOptions);

@@ -8,22 +8,24 @@ export type NavLinkType = {
   href: string;
 };
 
-export type LanguageContextType = {
-  lang: LangType;
-  setLang: (value: LangType) => void;
+// Context types
+export type ToastContextType = {
+  showToast: (message: string, variant?: ToastVariant) => void;
 };
 
-export type LanguageContextProviderType = {
+export type ToastContextProviderType = {
   children: React.ReactNode;
 };
 
-export type Language = {
+export type ToastVariant = "success" | "error";
+
+export type ToastItem = {
   id: number;
-  code: LangType;
-  flag: string;
-  label: string;
+  message: string;
+  variant: ToastVariant;
 };
 
+// Language types
 export type LangType = "en" | "ro";
 
 export type LangParamsType = {
@@ -135,4 +137,11 @@ export type DBUserSavedAnalysisType = {
 export type UseUnsavedChangesGuardParams = {
   isDirty: boolean;
   message?: string;
+};
+
+export type LanguageType = {
+  id: number;
+  flag: string;
+  label: string;
+  code: LangType;
 };

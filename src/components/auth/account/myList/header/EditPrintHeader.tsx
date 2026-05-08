@@ -94,7 +94,7 @@ const EditPrintHeader = ({
       if (!updateHeaderData.ok) {
         throw new Error("Failed to update header data");
       }
-      router.push(`/${lang}/account/my-list`);
+      router.push(`/${lang}/account/my-list?success=header-updated`);
     } catch (error) {
       console.error(error);
       setSubmitError(t.saveError);

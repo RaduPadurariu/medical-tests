@@ -17,6 +17,7 @@ const MedicalTestsFilterSection = ({
   q: string;
 }) => {
   const options = labTestsOptions[lang];
+  // I did this in case we need debouncing for the search input in the future, it could be done directly with query without state
   const [search, setSearch] = useState(q ?? "");
   const router = useRouter();
   const pathname = usePathname();
